@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import AddList from './components/AddList/AddList';
+import Lists from './components/Lists/Lists';
 
 class App extends Component {
   state = {
@@ -15,7 +16,7 @@ class App extends Component {
       <div className="App">
           <h1>TODO LIST PLANNER</h1>
           <AddList />
-          <div>Lists</div>
+          <Lists />
       </div>
     );
   }
