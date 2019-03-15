@@ -11,11 +11,26 @@ class App extends Component {
     lists: []
   }
 
+  titleChangeHandler = () => {
+
+  }
+
+  dateChangeHandler = () => {
+
+  }
+
+  addNewListHandler = () => {
+
+  }
+
   render() {
     return (
       <div className="App">
           <h1>TODO LIST PLANNER</h1>
-          <AddList />
+          <AddList
+            onTitleChange={this.titleChangeHandler}
+            onDateChange={this.dateChangeHandler}
+            addNewList={this.addNewListHandler} />
           <Lists />
       </div>
     );

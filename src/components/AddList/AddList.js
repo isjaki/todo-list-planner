@@ -5,15 +5,23 @@ const addList = props => (
         <h2>Create a TODO list</h2>
         <p>
             <label>Choose a title:
-                <input name="title" type="text" />
+                <input 
+                    name="title"
+                    type="text"
+                    onChange={props.onTitleChange} />
             </label>
         </p>
         <p>
             <label>Choose a date:
-                <input id="date" name="date" type="text" />
+                <input 
+                    name="date" 
+                    type="text"
+                    onChange={props.onDateChange} />
             </label>     
         </p>
-        <button>CREATE</button>
+        <button
+            onClick={props.addNewList}
+        >CREATE</button>
     </div>
 );
 
