@@ -9,7 +9,7 @@ const addList = props => (
         </p>
         <p>
             <label htmlFor="date">Choose a date:</label>
-            <input id="date" name="date" type="date" />
+            <input id="date" name="date" type="text" />
         </p>
         <button>CREATE</button>
     </div>
