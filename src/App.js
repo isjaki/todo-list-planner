@@ -6,7 +6,7 @@ import Lists from './components/Lists/Lists';
 
 class App extends Component {
   state = {
-    currentListName: '',
+    currentListTitle: '',
     currentListDate: '',
     lists: []
   }

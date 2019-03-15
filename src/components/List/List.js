@@ -5,7 +5,7 @@ class List extends Component {
         return (
             <div>List
                 <header>
-                    <span>Name</span><span>Date</span>
+                    <span>Title</span><span>Date</span>
                     <button>DELETE</button>
                 </header>
             </div>
