@@ -4,10 +4,13 @@ class List extends Component {
     render() {
         return (
             <div>
-                <header>
+                <div>
                     <span>{this.props.title}</span><span>{this.props.date}</span>
-                    <button>DELETE</button>
-                </header>
+                    <button onClick={this.props.deleteList}>DELETE</button>
+                </div>
+                <div>ListItems</div>
+                <div>AddItem</div>
+                <button>SAVE</button>
             </div>
         );
     }

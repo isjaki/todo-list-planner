@@ -40,6 +40,16 @@ class App extends Component {
     });
   }
 
+  deleteListHandler = (listIndex) => {
+    const updatedLists = [
+      ...this.state.lists
+    ];
+
+    updatedLists.splice(listIndex, 1);
+
+    this.setState({ lists: updatedLists });
+  }
+
   render() {
     return (
       <div className="App">
@@ -50,7 +60,9 @@ class App extends Component {
             addNewList={this.addNewListHandler}
             title={this.state.currentListTitle}
             date={this.state.currentListDate} />
-          <Lists todoLists={this.state.lists} />
+          <Lists 
+            todoLists={this.state.lists}
+            onListRemove={this.deleteListHandler} />
       </div>
     );
   }
