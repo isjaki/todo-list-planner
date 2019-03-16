@@ -8,6 +8,7 @@ const addList = props => (
                 <input 
                     name="title"
                     type="text"
+                    value={props.title}
                     onChange={props.onTitleChange} />
             </label>
         </p>
@@ -16,8 +17,9 @@ const addList = props => (
                 <input 
                     name="date" 
                     type="text"
+                    value={props.date}
                     onChange={props.onDateChange} />
-            </label>     
+            </label>
         </p>
         <button
             onClick={props.addNewList}

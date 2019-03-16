@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getKey from './functions/getKey';
 import './App.css';
 
 import AddList from './components/AddList/AddList';
@@ -11,16 +12,32 @@ class App extends Component {
     lists: []
   }
 
-  titleChangeHandler = () => {
-
+  titleChangeHandler = (event) => {
+    this.setState({ currentListTitle: event.target.value });
   }
 
-  dateChangeHandler = () => {
-
+  dateChangeHandler = (event) => {
+    this.setState({ currentListDate: event.target.value });
   }
 
   addNewListHandler = () => {
+    const newList = {
+      id: getKey(this.state.currentListTitle),
+      title: this.state.currentListTitle,
+      date: this.state.currentListDate
+    }
 
+    const updatedLists = [
+      ...this.state.lists
+    ];
+
+    updatedLists.push(newList);
+
+    this.setState({
+      currentListTitle: '',
+      currentListDate: '',
+      lists: updatedLists
+    });
   }
 
   render() {
@@ -30,7 +47,9 @@ class App extends Component {
           <AddList
             onTitleChange={this.titleChangeHandler}
             onDateChange={this.dateChangeHandler}
-            addNewList={this.addNewListHandler} />
+            addNewList={this.addNewListHandler}
+            title={this.state.currentListTitle}
+            date={this.state.currentListDate} />
           <Lists />
       </div>
     );
