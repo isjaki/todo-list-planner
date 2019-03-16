@@ -50,7 +50,7 @@ class App extends Component {
             addNewList={this.addNewListHandler}
             title={this.state.currentListTitle}
             date={this.state.currentListDate} />
-          <Lists />
+          <Lists todoLists={this.state.lists} />
       </div>
     );
   }

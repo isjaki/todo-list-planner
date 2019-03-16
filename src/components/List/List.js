@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class List extends Component {
     render() {
         return (
-            <div>List
+            <div>
                 <header>
-                    <span>Title</span><span>Date</span>
+                    <span>{this.props.title}</span><span>{this.props.date}</span>
                     <button>DELETE</button>
                 </header>
             </div>
