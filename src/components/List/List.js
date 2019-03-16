@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import ListItems from '../List/ListItems/ListItems';
+import AddItem from '../List/AddItem/AddItem';
+
 class List extends Component {
     render() {
         return (
@@ -8,8 +11,8 @@ class List extends Component {
                     <span>{this.props.title}</span><span>{this.props.date}</span>
                     <button onClick={this.props.deleteList}>DELETE</button>
                 </div>
-                <div>ListItems</div>
-                <div>AddItem</div>
+                <ListItems />
+                <AddItem />
                 <button>SAVE</button>
             </div>
         );
