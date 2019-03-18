@@ -53,7 +53,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1>TODO LIST PLANNER</h1>
           <AddList
             onTitleChange={this.titleChangeHandler}
             onDateChange={this.dateChangeHandler}

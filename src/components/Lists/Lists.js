@@ -1,6 +1,7 @@
 import React from 'react';
 
 import List from '../List/List';
+import './Lists.css';
 
 const lists = props => {
     const todoLists = props.todoLists.map((list, index) => {
@@ -12,7 +13,7 @@ const lists = props => {
     });
 
     return (
-        <div>
+        <div className="Lists">
             {todoLists}
         </div>
     );
