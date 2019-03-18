@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './AddList.css';
+import Button from '../UI/Button/Button';
 
 const addList = props => (
     <div className="AddList">
@@ -25,9 +26,10 @@ const addList = props => (
                     value={props.date}
                     onChange={props.onDateChange} />
             </p>
-            <button
-                onClick={props.addNewList}
-            >Create</button>
+            <Button
+                clicked={props.addNewList}
+                className="AddListButton"
+            >Create</Button>
         </div>
     </div>
 );

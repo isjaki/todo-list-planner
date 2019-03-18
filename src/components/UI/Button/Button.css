@@ -1,0 +1,20 @@
+button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    transition: 0.5s;
+}
+
+button.AddListButton {
+    background: transparent;
+    border: 2px solid #f9f9f9;
+    border-radius: 100px;
+    color: #f9f9f9;
+    padding: 10px 25px;
+}
+
+button.AddListButton:hover {
+    background: #ce3232;
+    border: 2px solid #ce3232;;
+}
+
