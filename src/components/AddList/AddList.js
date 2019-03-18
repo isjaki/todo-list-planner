@@ -6,24 +6,24 @@ const addList = props => (
     <div className="AddList">
         <h1>TODO LIST PLANNER</h1>
         <div className="AddList__Create">
-            <h2>Create your TODO list:</h2>
+            <h2>Create a TODO list:</h2>
             <p>
-                <label>Choose a title:
-                    <input 
-                        name="title"
-                        type="text"
-                        value={props.title}
-                        onChange={props.onTitleChange} />
-                </label>
+                <label htmlFor="title">Give a title to your list:</label>
+                <br /><input 
+                    id="title"
+                    name="title"
+                    type="text"
+                    value={props.title}
+                    onChange={props.onTitleChange} />
             </p>
             <p>
-                <label>Choose a date:
-                    <input 
-                        name="date" 
-                        type="text"
-                        value={props.date}
-                        onChange={props.onDateChange} />
-                </label>
+                <label htmlFor="date">Set a date:</label>
+                <br /><input 
+                    id="date"
+                    name="date" 
+                    type="text"
+                    value={props.date}
+                    onChange={props.onDateChange} />
             </p>
             <button
                 onClick={props.addNewList}

@@ -13,7 +13,7 @@ const lists = props => {
     });
 
     return (
-        <div className="Lists">
+        <div className={todoLists.length ? 'Lists' : null}>
             {todoLists}
         </div>
     );

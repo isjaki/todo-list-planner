@@ -1,6 +1,5 @@
 .AddList {
    box-sizing: border-box;
-   text-align: center;
    width: 100%;
    height: 100vh;
    background: linear-gradient(to right, rgba(5, 117, 230, 0.7), rgba(0, 242, 96, 0.7)), 
@@ -10,10 +9,30 @@
    position: relative;
 }
 
+.AddList h1 {
+    text-align: center;
+    font-weight: normal;
+}
+
 .AddList__Create {
     position: absolute;
-    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
+    font-size: 1.2em;
+}
+
+.AddList__Create h2 {
+    font-weight: normal;
+}
+
+.AddList__Create input {
+    width: 100%;
+    height: 30px;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
 }
