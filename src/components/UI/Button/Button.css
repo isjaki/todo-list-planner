@@ -3,6 +3,7 @@ button {
     display: inline-block;
     font-size: inherit;
     transition: 0.5s;
+    outline: none;
 }
 
 button.AddListButton {
