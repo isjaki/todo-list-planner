@@ -1,6 +1,8 @@
 button {
+    box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
+    font-family: inherit;
     font-size: inherit;
     transition: 0.5s;
     outline: none;
@@ -17,5 +19,24 @@ button.AddListButton {
 button.AddListButton:hover {
     background: #ce3232;
     border: 2px solid #ce3232;;
+}
+
+button.ListButton {
+    background: #f0f0f0;
+    color: #000000;
+    border-radius: 100px;
+    border: none;
+    padding: 6px 13px;
+    font-size: 0.9em;
+}
+
+button.Delete:hover {
+    background: #ce3232;
+    color: #f9f9f9;
+}
+
+button.AddItem:hover {
+    background: linear-gradient(to right, rgba(5, 117, 230, 0.7), rgba(0, 242, 96, 0.7));
+    color: #f9f9f9;
 }
 

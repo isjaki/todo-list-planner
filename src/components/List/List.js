@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import ListItems from '../List/ListItems/ListItems';
 import AddItem from '../List/AddItem/AddItem';
+import Button from '../UI/Button/Button';
 import './List.css';
 
 class List extends Component {
@@ -10,7 +11,10 @@ class List extends Component {
             <div className="List">
                 <div>
                     <span>{this.props.title}</span><span>{this.props.date}</span>
-                    <button onClick={this.props.deleteList}>Delete</button>
+                    <Button 
+                        onClick={this.props.deleteList}
+                        className="ListButton Delete"
+                    >Delete</Button>
                 </div>
                 <ListItems />
                 <AddItem />
