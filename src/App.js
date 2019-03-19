@@ -9,7 +9,9 @@ class App extends Component {
   state = {
     currentListTitle: '',
     currentListDate: '',
-    lists: []
+    lists: [
+      { title: 'Test list', date: '19-03-2019' }
+    ]
   }
 
   titleChangeHandler = (event) => {
