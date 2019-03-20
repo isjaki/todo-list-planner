@@ -46,7 +46,7 @@ class List extends Component {
                     clicked={this.props.deleteList}
                     className="ListButton Delete"
                 >Delete</Button>
-                <ListItems />
+                <ListItems tasks={this.state.listItems} />
                 <AddItem
                     onTaskNameChange={this.changeTaskNameHandler}
                     clicked={this.addListItemHandler}
