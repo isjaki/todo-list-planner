@@ -9,7 +9,7 @@ class List extends Component {
     render() {
         return (
             <div className="List">
-                <div>{this.props.date}</div>
+                <div><i class="far fa-clock"></i>{this.props.date}</div>
                 <div>{this.props.title}</div>
                 <Button 
                     onClick={this.props.deleteList}
