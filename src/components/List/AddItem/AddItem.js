@@ -9,7 +9,8 @@ const addItem = props => (
         <input 
             type="text"
             className="AddItemInput"
-            placeholder="What are you up to?" />
+            placeholder="What are you up to?"
+            onChange={props.onTaskNameChange} />
         <Button
             className="ListButton AddItem"
         >Add</Button>
