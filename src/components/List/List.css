@@ -25,6 +25,12 @@
     font-weight: bold;
 }
 
+@media screen and (min-width: 800px) {
+    .List__Title {
+        font-size: 1.1em;
+    }
+}
+
 @media screen and (min-width: 900px) {
     .List {
         width: 880px;

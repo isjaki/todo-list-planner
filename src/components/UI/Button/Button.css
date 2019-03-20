@@ -26,6 +26,7 @@ button.ListButton {
     color: #000000;
     border: none;
     font-size: 0.9em;
+    padding: 5px 13px;
 }
 
 button.ListButton.Delete {
@@ -33,7 +34,6 @@ button.ListButton.Delete {
     top: 10px;
     right: 10px;
     border-radius: 100px;
-    padding: 6px 13px;
 }
 
 button.ListButton.Delete:hover {
@@ -44,11 +44,18 @@ button.ListButton.Delete:hover {
 button.ListButton.AddItem {
     margin-left: 10px;
     border-radius: 5px;
-    padding: 5px 13px;
 }
 
 button.ListButton.AddItem:hover {
     background: linear-gradient(to right, rgba(5, 117, 230, 0.7), rgba(0, 242, 96, 0.7));
     color: #f9f9f9;
 }
+
+@media screen and (min-width: 800px) {
+    button.ListButton {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
+
 
