@@ -3,3 +3,12 @@
     background-color: #f0f0f0;
     padding: 10px;
 }
+
+@media screen and (min-width: 1700px) {
+    .Lists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}

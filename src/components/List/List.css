@@ -8,3 +8,40 @@
     border-radius: 5px;
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
 }
+
+.List__Date .fa-clock {
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.List__Date {
+    color: #ce3232;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.List__Title {
+    width: calc(100% - 85px);
+    font-weight: bold;
+}
+
+@media screen and (min-width: 900px) {
+    .List {
+        width: 880px;
+        margin: 10px auto 20px;
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .List {
+        width: 920px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .List {
+        display: inline-block;
+        width: 40%;
+    }
+}
+

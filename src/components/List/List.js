@@ -9,8 +9,8 @@ class List extends Component {
     render() {
         return (
             <div className="List">
-                <div><i class="far fa-clock"></i>{this.props.date}</div>
-                <div>{this.props.title}</div>
+                <div className="List__Date"><i class="far fa-clock"></i><span>{this.props.date}</span></div>
+                <div className="List__Title">{this.props.title}</div>
                 <Button 
                     onClick={this.props.deleteList}
                     className="ListButton Delete"
