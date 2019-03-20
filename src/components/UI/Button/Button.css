@@ -24,18 +24,30 @@ button.AddListButton:hover {
 button.ListButton {
     background: #f0f0f0;
     color: #000000;
-    border-radius: 100px;
     border: none;
-    padding: 6px 13px;
     font-size: 0.9em;
 }
 
-button.Delete:hover {
+button.ListButton.Delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 100px;
+    padding: 6px 13px;
+}
+
+button.ListButton.Delete:hover {
     background: #ce3232;
     color: #f9f9f9;
 }
 
-button.AddItem:hover {
+button.ListButton.AddItem {
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 5px 13px;
+}
+
+button.ListButton.AddItem:hover {
     background: linear-gradient(to right, rgba(5, 117, 230, 0.7), rgba(0, 242, 96, 0.7));
     color: #f9f9f9;
 }
