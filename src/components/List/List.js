@@ -32,6 +32,7 @@ class List extends Component {
         updatedListItems.push(newListItem);
 
         this.setState({
+            currentTask: '',
             listItems: updatedListItems
         });
     }
@@ -42,12 +43,14 @@ class List extends Component {
                 <div className="List__Date"><i class="far fa-clock"></i>{this.props.date}</div>
                 <div className="List__Title">{this.props.title}</div>
                 <Button 
-                    onClick={this.props.deleteList}
+                    clicked={this.props.deleteList}
                     className="ListButton Delete"
                 >Delete</Button>
                 <ListItems />
                 <AddItem
-                    onTaskNameChange={this.changeTaskNameHandler} />
+                    onTaskNameChange={this.changeTaskNameHandler}
+                    clicked={this.addListItemHandler}
+                    value={this.state.currentTask} />
             </div>
         );
     }

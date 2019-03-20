@@ -10,9 +10,11 @@ const addItem = props => (
             type="text"
             className="AddItemInput"
             placeholder="What are you up to?"
+            value={props.value}
             onChange={props.onTaskNameChange} />
         <Button
             className="ListButton AddItem"
+            clicked={props.clicked}
         >Add</Button>
     </Aux>
 );
