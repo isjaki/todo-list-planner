@@ -14,6 +14,10 @@ class ListItem extends Component {
         }));
     }
 
+    mouseDownHandler = (event) => {
+        event.preventDefault();
+    }
+
     render() {
         const completedButtonClasses = ['ListItemButton', 'Completed'];
         const deleteButtonClasses = ['ListItemButton', 'Delete'];
@@ -29,9 +33,11 @@ class ListItem extends Component {
                 <span
                     className="ListItem__TaskName"
                     onClick={this.toggleButtonsClassHandler}
+                    onMouseDown={this.mouseDownHandler}
                 >{this.props.taskName}</span>
                 <Button
                     className={completedButtonClasses.join(' ')}
+                    clicked={this.props.onTaskCompletion}
                 >
                     <i className="fas fa-check"></i>
                 </Button>

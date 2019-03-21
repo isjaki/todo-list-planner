@@ -43,6 +43,18 @@ class List extends Component {
         });
     }
 
+    completeTaskHandler = (listItemIndex) => {
+        const updatedListItems = [
+            ...this.state.listItems
+        ];
+
+        updatedListItems[listItemIndex].completed = !updatedListItems[listItemIndex].completed;
+
+        this.setState({
+            listItems: updatedListItems
+        });
+    }
+
     render() {
         return (
             <div className="List">
@@ -52,7 +64,9 @@ class List extends Component {
                     clicked={this.props.deleteList}
                     className="ListButton Delete"
                 >Delete</Button>
-                <ListItems tasks={this.state.listItems} />
+                <ListItems 
+                    tasks={this.state.listItems}
+                    onTaskCompletion={this.completeTaskHandler} />
                 <AddItem
                     onTaskNameChange={this.changeTaskNameHandler}
                     clicked={this.addListItemHandler}
