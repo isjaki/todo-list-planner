@@ -10,7 +10,7 @@ class App extends Component {
     currentListTitle: '',
     currentListDate: '',
     lists: [
-      { title: 'Test list', date: '19-03-2019' }
+      { id: '5865', title: 'Test list', date: 'March 21, 2019' }
     ]
   }
 

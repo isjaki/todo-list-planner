@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ListItem from './ListItem/ListItem';
+import './ListItems.css';
 
 const listItems = props => {
     const tasks = props.tasks.map(task => {
@@ -10,7 +11,7 @@ const listItems = props => {
     });
 
     return (
-        <ul>
+        <ul className="ListItems">
            {tasks}
         </ul>
     );

@@ -9,7 +9,13 @@ import './List.css';
 class List extends Component {
     state = {
         currentTask: '',
-        listItems: []
+        listItems: [
+            {id: '3432', taskName: 'to do something', completed: false},
+            {id: '8799', taskName: 'to do something', completed: false},
+            {id: '43534', taskName: 'to do something', completed: false},
+            {id: '3424', taskName: 'to do something', completed: false},
+            {id: '13143', taskName: 'to do something', completed: false}
+        ]
     }
 
     changeTaskNameHandler = (event) => {
@@ -40,7 +46,7 @@ class List extends Component {
     render() {
         return (
             <div className="List">
-                <div className="List__Date"><i class="far fa-clock"></i>{this.props.date}</div>
+                <div className="List__Date"><i className="far fa-clock"></i>{this.props.date}</div>
                 <div className="List__Title">{this.props.title}</div>
                 <Button 
                     clicked={this.props.deleteList}
