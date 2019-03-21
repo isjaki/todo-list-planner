@@ -1,10 +1,12 @@
 import React from 'react';
 
 import Button from '../../../UI/Button/Button';
+import './ListItem.css';
 
 const listItem = props => (
-    <li>{props.completed ? <i className="fas fa-check-square"></i> : <i className="far fa-clock"></i>}
-        {props.taskName}
+    <li className="ListItem">
+        {props.completed ? <i className="fas fa-check-square"></i> : <i className="fas fa-clock"></i>}
+        <span className="ListItem__TaskName">{props.taskName}</span>
         <Button><i className="fas fa-check"></i></Button>
         <Button><i className="fas fa-times"></i></Button>
     </li>

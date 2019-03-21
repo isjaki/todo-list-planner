@@ -1,0 +1,17 @@
+.ListItem {
+    margin: 10px 0;
+}
+
+.ListItem .fa-check-square {
+    color: #00f260;
+    margin-right: 5px;
+}
+
+.ListItem .fa-clock {
+    color: #ce3232;
+    margin-right: 5px;
+}
+
+.ListItem__TaskName {
+    cursor: pointer;
+}
