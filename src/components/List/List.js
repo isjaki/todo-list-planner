@@ -10,8 +10,8 @@ class List extends Component {
     state = {
         currentTask: '',
         listItems: [
-            {id: '3432', taskName: 'to do something', completed: false},
-            {id: '8799', taskName: 'to do something', completed: false},
+            {id: '3432', taskName: 'to do something', completed: true},
+            {id: '8799', taskName: 'to do something', completed: true},
             {id: '43534', taskName: 'to do something', completed: false},
             {id: '3424', taskName: 'to do something', completed: false},
             {id: '13143', taskName: 'to do something', completed: false}

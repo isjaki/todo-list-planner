@@ -7,7 +7,8 @@ const listItems = props => {
     const tasks = props.tasks.map(task => {
         return <ListItem 
             key={task.id}
-            taskName={task.taskName} />
+            taskName={task.taskName}
+            completed={task.completed} />
     });
 
     return (
