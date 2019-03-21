@@ -39,7 +39,7 @@ class ListItem extends Component {
                     className={completedButtonClasses.join(' ')}
                     clicked={this.props.onTaskCompletion}
                 >
-                    <i className="fas fa-check"></i>
+                    {this.props.completed ? <i class="fas fa-redo-alt"></i> : <i className="fas fa-check"></i>}
                 </Button>
                 <Button
                     className={deleteButtonClasses.join(' ')}
