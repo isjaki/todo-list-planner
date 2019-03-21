@@ -9,7 +9,8 @@ const listItems = props => {
             key={task.id}
             taskName={task.taskName}
             completed={task.completed}
-            onTaskCompletion={props.onTaskCompletion.bind(this, index)} />
+            onTaskCompletion={props.onTaskCompletion.bind(this, index)}
+            onListItemDeletion={props.onListItemDeletion.bind(this, index)} />
     });
 
     return (

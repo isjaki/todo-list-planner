@@ -43,6 +43,18 @@ class List extends Component {
         });
     }
 
+    deleteListItemHandler = (listItemIndex) => {
+        const updatedListItems = [
+            ...this.state.listItems
+        ];
+
+        updatedListItems.splice(listItemIndex, 1);
+
+        this.setState({
+            listItems: updatedListItems
+        });
+    }
+
     completeTaskHandler = (listItemIndex) => {
         const updatedListItems = [
             ...this.state.listItems
@@ -66,7 +78,8 @@ class List extends Component {
                 >Delete</Button>
                 <ListItems 
                     tasks={this.state.listItems}
-                    onTaskCompletion={this.completeTaskHandler} />
+                    onTaskCompletion={this.completeTaskHandler}
+                    onListItemDeletion={this.deleteListItemHandler} />
                 <AddItem
                     onTaskNameChange={this.changeTaskNameHandler}
                     clicked={this.addListItemHandler}

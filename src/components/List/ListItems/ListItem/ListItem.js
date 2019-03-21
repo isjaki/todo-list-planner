@@ -43,6 +43,7 @@ class ListItem extends Component {
                 </Button>
                 <Button
                     className={deleteButtonClasses.join(' ')}
+                    clicked={this.props.onListItemDeletion}
                 >
                     <i className="fas fa-times"></i>
                 </Button>
