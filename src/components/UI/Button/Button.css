@@ -52,10 +52,22 @@ button.ListButton.AddItem:hover {
 }
 
 button.ListItemButton {
+    position: relative;
+    z-index: 100;
     border: none;
     margin: 0 5px;
     border-radius: 5px;
     color: #ffffff;
+}
+
+button.ListItemButton.Completed.Hidden {
+    transform: translateX(-40px) scale(0.4);
+    opacity: 0;
+}
+
+button.ListItemButton.Delete.Hidden {
+    transform: translateX(-80px) scale(0.4);
+    opacity: 0;
 }
 
 button.ListItemButton.Completed {

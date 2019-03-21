@@ -16,4 +16,6 @@
 
 .ListItem__TaskName {
     cursor: pointer;
+    position: relative;
+    z-index: 900;
 }
