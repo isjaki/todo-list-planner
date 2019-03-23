@@ -10,11 +10,11 @@ class List extends Component {
     state = {
         currentTask: '',
         listItems: [
-            {id: '3432', taskName: 'to do something', completed: true},
-            {id: '8799', taskName: 'to do something', completed: true},
-            {id: '43534', taskName: 'to do something', completed: false},
-            {id: '3424', taskName: 'to do something', completed: false},
-            {id: '13143', taskName: 'to do something', completed: false}
+            {id: '3432', taskName: 'to do something', completed: true, buttonsHidden: true},
+            {id: '8799', taskName: 'to do something', completed: true, buttonsHidden: true},
+            {id: '43534', taskName: 'to do something', completed: false, buttonsHidden: true},
+            {id: '3424', taskName: 'to do something', completed: false, buttonsHidden: true},
+            {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
         ]
     }
 
@@ -28,7 +28,8 @@ class List extends Component {
         const newListItem = {
             id: getKey(this.state.currentTask),
             taskName: this.state.currentTask,
-            completed: false
+            completed: false,
+            buttonsHidden: true
         }
 
         const updatedListItems = [
@@ -61,6 +62,19 @@ class List extends Component {
         ];
 
         updatedListItems[listItemIndex].completed = !updatedListItems[listItemIndex].completed;
+        updatedListItems[listItemIndex].buttonsHidden = !updatedListItems[listItemIndex].buttonsHidden;
+
+        this.setState({
+            listItems: updatedListItems,
+        });
+    }
+
+    toggleButtonsClassHandler = (listItemIndex) => {
+        const updatedListItems = [
+            ...this.state.listItems
+        ];
+
+        updatedListItems[listItemIndex].buttonsHidden = !updatedListItems[listItemIndex].buttonsHidden;
 
         this.setState({
             listItems: updatedListItems
@@ -79,7 +93,9 @@ class List extends Component {
                 <ListItems 
                     tasks={this.state.listItems}
                     onTaskCompletion={this.completeTaskHandler}
-                    onListItemDeletion={this.deleteListItemHandler} />
+                    onListItemDeletion={this.deleteListItemHandler}
+                    onTaskNameClick={this.toggleButtonsClassHandler}
+                     />
                 <AddItem
                     onTaskNameChange={this.changeTaskNameHandler}
                     clicked={this.addListItemHandler}
