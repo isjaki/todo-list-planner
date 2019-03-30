@@ -15,10 +15,11 @@ class List extends Component {
             {id: '43534', taskName: 'to do something', completed: false, buttonsHidden: true},
             {id: '3424', taskName: 'to do something', completed: false, buttonsHidden: true},
             {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
-        ]
+        ],
+        inputError: false
     }
 
-    changeTaskNameHandler = (event) => {
+    inputTaskNameHandler = (event) => {
         this.setState({
             currentTask: event.target.value
         });
@@ -97,7 +98,7 @@ class List extends Component {
                     onTaskNameClick={this.toggleButtonsClassHandler}
                      />
                 <AddItem
-                    onTaskNameChange={this.changeTaskNameHandler}
+                    onTaskNameInput={this.inputTaskNameHandler}
                     clicked={this.addListItemHandler}
                     value={this.state.currentTask} />
             </div>

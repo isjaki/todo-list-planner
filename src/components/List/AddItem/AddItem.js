@@ -11,7 +11,7 @@ const addItem = props => (
             className="AddItemInput"
             placeholder="What are you up to?"
             value={props.value}
-            onChange={props.onTaskNameChange} />
+            onChange={props.onTaskNameInput} />
         <Button
             className="ListButton AddItem"
             clicked={props.clicked}
