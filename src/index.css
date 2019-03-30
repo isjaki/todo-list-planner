@@ -3,3 +3,7 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+.Error {
+  border: 2px solid #ce3232 !important;
+}

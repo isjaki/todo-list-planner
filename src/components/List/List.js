@@ -26,6 +26,11 @@ class List extends Component {
     }
 
     addListItemHandler = () => {
+        if (!this.state.currentTask) {
+            this.setState({ inputError: true });
+            return;
+        }
+
         const newListItem = {
             id: getKey(this.state.currentTask),
             taskName: this.state.currentTask,
@@ -82,6 +87,14 @@ class List extends Component {
         });
     }
 
+    inputFocusHandler = () => {
+        if (this.state.inputError) {
+            this.setState({
+                inputError: false
+            });
+        }
+    }
+
     render() {
         return (
             <div className="List">
@@ -95,12 +108,13 @@ class List extends Component {
                     tasks={this.state.listItems}
                     onTaskCompletion={this.completeTaskHandler}
                     onListItemDeletion={this.deleteListItemHandler}
-                    onTaskNameClick={this.toggleButtonsClassHandler}
-                     />
+                    onTaskNameClick={this.toggleButtonsClassHandler} />
                 <AddItem
                     onTaskNameInput={this.inputTaskNameHandler}
+                    onInputFocus={this.inputFocusHandler}
                     clicked={this.addListItemHandler}
-                    value={this.state.currentTask} />
+                    value={this.state.currentTask}
+                    hasError={this.state.inputError} />
             </div>
         );
     }
