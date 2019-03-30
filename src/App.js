@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import getKey from './functions/getKey';
+import activateSmoothScroll from './functions/activateSmoothScroll';
 import './App.css';
 
 import AddList from './components/AddList/AddList';
 import Lists from './components/Lists/Lists';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.listsRef = React.createRef();
+  }
+
   state = {
     currentListTitle: '',
     currentListDate: '',
@@ -40,6 +46,8 @@ class App extends Component {
       currentListDate: '',
       lists: updatedLists
     });
+
+    activateSmoothScroll(this.listsRef.current);
   }
 
   deleteListHandler = (listIndex) => {
@@ -61,7 +69,8 @@ class App extends Component {
             addNewList={this.addNewListHandler}
             title={this.state.currentListTitle}
             date={this.state.currentListDate} />
-          <Lists 
+          <Lists
+            ref={this.listsRef} 
             todoLists={this.state.lists}
             onListRemove={this.deleteListHandler} />
       </div>
