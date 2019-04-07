@@ -1,12 +1,12 @@
 .Calendar {
-    width: 370px;
+    width: 95%;
     margin: 0 auto;
 }
 
 .Calendar div {
     display: inline-block;
-    width: calc(370px / 7);
-    padding: 10px;
+    width: calc(100% / 7);
+    padding: 3px;
     box-sizing: border-box;
 }
 
@@ -74,7 +74,27 @@
 
 .Calendar__header {
     font-weight: bold;
+    font-size: 13px;
     background-color: #3f58fc;
     color: #fff;
     cursor: auto;
+}
+
+@media screen and (min-width: 350px) {
+    .Calendar div {
+        padding: 6px;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    .Calendar__header {
+        font-size: inherit;
+    }
+}
+
+
+@media screen and (min-width: 470px) {
+    .Calendar div {
+        padding: 8px;
+    }
 }

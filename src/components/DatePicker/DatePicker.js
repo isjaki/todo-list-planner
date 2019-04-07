@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import calendarCreator from '../../helpers/calendar';
 
-import Calendar from '../Calendar/Calendar';
+import Calendar from './Calendar/Calendar';
 import './DatePicker.css';
 
 class DatePicker extends Component {

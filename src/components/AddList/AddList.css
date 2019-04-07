@@ -16,9 +16,9 @@
 
 .AddList__Create {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     width: 90%;
     font-size: 1.2em;
 }
@@ -35,6 +35,10 @@
     outline: none;
     border-radius: 5px;
     background-color: #f0f0f0;
+}
+
+.DatePicker__Container {
+    position: relative;
 }
 
 @media screen and (min-width: 580px)  {
@@ -54,6 +58,13 @@
 
     .AddList__Create input {
         height: 35px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .AddList__Create {
+        top: 45%;
+        transform: translate(-50%, -45%);
     }
 }
 

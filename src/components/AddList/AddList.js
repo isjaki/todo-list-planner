@@ -2,6 +2,7 @@ import React from 'react';
 
 import './AddList.css';
 import Button from '../UI/Button/Button';
+import DatePicker from '../DatePicker/DatePicker';
 
 const addList = props => (
     <div className="AddList">
@@ -17,14 +18,9 @@ const addList = props => (
                     value={props.title}
                     onChange={props.onTitleChange} />
             </p>
-            <p>
-                <label htmlFor="date">Set a date:</label>
-                <br /><input 
-                    id="date"
-                    name="date" 
-                    type="text"
-                    value={props.date}
-                    onChange={props.onDateChange} />
+            <p className="DatePicker__Container">
+                <label>Set a date:</label>
+                <DatePicker />
             </p>
             <Button
                 clicked={props.addNewList}

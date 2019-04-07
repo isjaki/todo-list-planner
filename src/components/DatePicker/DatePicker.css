@@ -1,13 +1,52 @@
 .DatePicker {
-    width: 400px;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    width: 92%;
+    font-size: 15px;
+    text-align: center;
     margin: 0 auto;
     border: 2px solid #0575e6;
     border-radius: 5px;
     padding: 10px;
     background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
 }
 
 .DatePicker__CurrentDate {
     font-weight: bold;
+}
+
+@media screen and (min-width: 350px) {
+    .DatePicker {
+        width: 93%;
+    }
+}
+
+@media screen and (min-width: 380px) {
+    .DatePicker {
+        width: 94%;
+    }
+}
+
+@media screen and (min-width: 470px) {
+    .DatePicker {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .DatePicker {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .DatePicker {
+        top: -5px;
+        left: 140px;
+        width: 376px;
+    }
 }

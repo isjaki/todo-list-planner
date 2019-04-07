@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import calendarCreator from '../../helpers/calendar';
+import calendarCreator from '../../../helpers/calendar';
 
-import CalendarTable from '../../components/CalendarTable/CalendarTable';
+import CalendarTable from '../CalendarTable/CalendarTable';
 import './Calendar.css';
 
 class Calendar extends Component {
