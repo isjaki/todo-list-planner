@@ -14,25 +14,22 @@ class App extends Component {
 
   state = {
     currentListTitle: '',
-    currentListDate: '',
+    pickedDate: null,
     lists: [
       { id: '5865', title: 'Test list', date: 'March 21, 2019' }
-    ]
+    ],
+    calendarOpened: false
   }
 
   titleChangeHandler = (event) => {
     this.setState({ currentListTitle: event.target.value });
   }
 
-  dateChangeHandler = (event) => {
-    this.setState({ currentListDate: event.target.value });
-  }
-
   addNewListHandler = () => {
     const newList = {
       id: getKey(this.state.currentListTitle),
       title: this.state.currentListTitle,
-      date: this.state.currentListDate
+      date: this.state.pickedDate
     }
 
     const updatedLists = [
@@ -43,7 +40,6 @@ class App extends Component {
 
     this.setState({
       currentListTitle: '',
-      currentListDate: '',
       lists: updatedLists
     });
 
@@ -65,7 +61,6 @@ class App extends Component {
       <div className="App">
           <AddList
             onTitleChange={this.titleChangeHandler}
-            onDateChange={this.dateChangeHandler}
             addNewList={this.addNewListHandler}
             title={this.state.currentListTitle}
             date={this.state.currentListDate} />
