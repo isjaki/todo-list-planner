@@ -1,0 +1,80 @@
+.Calendar {
+    width: 370px;
+    margin: 0 auto;
+}
+
+.Calendar div {
+    display: inline-block;
+    width: calc(370px / 7);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Calendar div.current-month {
+    font-weight: bold;
+}
+
+.Calendar div.previous-month,
+.Calendar div.next-month {
+    color: #8b8b8b;
+}
+
+.Calendar div.current-month.date-disable {
+    font-weight: normal;
+    color: #8b8b8b;
+    cursor: not-allowed;
+}
+
+.Calendar div.current-month:not(.date-disable):hover,
+.Calendar div.next-month:hover,
+.Calendar div.previous-month:hover {
+    background-color: #ebebeb;
+}
+
+.Calendar__caption {
+    font-weight: bold;
+    margin-bottom: 7px;
+    position: relative;
+    cursor: auto;
+}
+
+.Calendar__caption button {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.Calendar__caption button[disabled] {
+    cursor: not-allowed;
+}
+
+.Calendar__caption button[disabled] .fas {
+    color: #8b8b8b;
+}
+
+.Calendar__caption button .fas {
+    font-size: 22px;
+}
+
+.Calendar__prev-button {
+    left: 10px;
+}
+
+.Calendar__next-button {
+    right: 10px;
+}
+
+.Calendar__caption .fas {
+    font-size: 10px;
+    color: #3f58fc;
+}
+
+.Calendar__header {
+    font-weight: bold;
+    background-color: #3f58fc;
+    color: #fff;
+    cursor: auto;
+}
