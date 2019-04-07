@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getKey from '../../functions/getKey';
+import getKey from '../../helpers/getKey';
 
 import ListItems from '../List/ListItems/ListItems';
 import AddItem from '../List/AddItem/AddItem';

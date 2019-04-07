@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import getKey from './functions/getKey';
-import activateSmoothScroll from './functions/activateSmoothScroll';
+import getKey from './helpers/getKey';
+import activateSmoothScroll from './helpers/activateSmoothScroll';
 import './App.css';
 
 import AddList from './components/AddList/AddList';
