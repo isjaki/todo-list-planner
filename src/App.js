@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import getKey from './helpers/getKey';
 import activateSmoothScroll from './helpers/activateSmoothScroll';
+import calendarCreator from './helpers/calendar';
 import './App.css';
 
 import AddList from './components/AddList/AddList';
@@ -19,6 +20,33 @@ class App extends Component {
       { id: '5865', title: 'Test list', date: 'March 21, 2019' }
     ],
     calendarOpened: false
+  }
+
+  componentDidMount() {
+    const currentMonth = calendarCreator.getCurrentMonth();
+    const currentDay = new Date().getDate();
+    const currentYear = calendarCreator.getCurrentYear();
+
+    const dateInCaption = `${currentMonth} ${currentDay}, ${currentYear}`;
+
+    this.setState({
+        pickedDate: dateInCaption
+    });
+  }
+
+  openCalendarHandler = () => {
+    this.setState({ calendarOpened: true });
+  }
+
+  pickDateHandler = (event) => {
+    event.stopPropagation();
+
+    const pickedDate = event.target.className.split(' ')[0].replace(/-/g, ' ');
+
+    this.setState({
+        pickedDate: pickedDate,
+        calendarOpened: false
+    });
   }
 
   titleChangeHandler = (event) => {
@@ -63,7 +91,11 @@ class App extends Component {
             onTitleChange={this.titleChangeHandler}
             addNewList={this.addNewListHandler}
             title={this.state.currentListTitle}
-            date={this.state.currentListDate} />
+            date={this.state.currentListDate}
+            pickedDate={this.state.pickedDate}
+            calendarOpened={this.state.calendarOpened}
+            openCalendarHandler={this.openCalendarHandler}
+            pickDateHandler={this.pickDateHandler} />
           <Lists
             ref={this.listsRef} 
             todoLists={this.state.lists}

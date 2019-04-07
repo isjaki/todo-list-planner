@@ -35,7 +35,7 @@ class List extends Component {
             id: getKey(this.state.currentTask),
             taskName: this.state.currentTask,
             completed: false,
-            buttonsHidden: true
+            buttonsHidden: false
         }
 
         const updatedListItems = [
