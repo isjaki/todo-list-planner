@@ -36,6 +36,7 @@
     outline: none;
     border-radius: 5px;
     background-color: #f0f0f0;
+    box-sizing: border-box;
 }
 
 .DatePicker__Container {
