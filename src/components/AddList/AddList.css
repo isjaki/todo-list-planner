@@ -41,6 +41,7 @@
 
 .DatePicker__Container {
     position: relative;
+    margin: 24px 0;
 }
 
 @media screen and (min-width: 580px)  {

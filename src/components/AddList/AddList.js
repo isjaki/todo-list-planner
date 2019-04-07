@@ -18,14 +18,14 @@ const addList = props => (
                     value={props.title}
                     onChange={props.onTitleChange} />
             </p>
-            <p className="DatePicker__Container">
+            <div className="DatePicker__Container">
                 <label>Set a date:</label>
                 <DatePicker
                     pickedDate={props.pickedDate}
                     calendarOpened={props.calendarOpened}
                     openCalendarHandler={props.openCalendarHandler}
                     pickDateHandler={props.pickDateHandler} />
-            </p>
+            </div>
             <Button
                 clicked={props.addNewList}
                 className="AddListButton"
