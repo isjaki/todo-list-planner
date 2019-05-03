@@ -1,0 +1,10 @@
+.ListStatsWidget {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    margin-top: 7px;
+    padding: 4px;
+}
