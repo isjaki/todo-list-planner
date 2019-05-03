@@ -26,9 +26,18 @@ const listStatsWidget = props => {
                 <div className="ListStatsWidget__item">Completed: {completedTasks}</div>
                 <div className="ListStatsWidget__item ListStatsWidget__item-sort">
                     <span>Sort by:</span>
-                    <Button className="ListStatsWidget__Button">All</Button>
-                    <Button className="ListStatsWidget__Button">Active</Button>
-                    <Button className="ListStatsWidget__Button">Completed</Button>
+                    <Button 
+                        className="ListStatsWidget__Button"
+                        clicked={() => props.sortTasks('all')}
+                    >All</Button>
+                    <Button 
+                        className="ListStatsWidget__Button"
+                        clicked={() => props.sortTasks('active')}
+                    >Active</Button>
+                    <Button 
+                        className="ListStatsWidget__Button"
+                        clicked={() => props.sortTasks('completed')}
+                    >Completed</Button>
                 </div>
             </div>
             <div className="ProgressBar">

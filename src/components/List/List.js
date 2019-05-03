@@ -17,6 +17,7 @@ class List extends Component {
             {id: '3424', taskName: 'to do something', completed: false, buttonsHidden: true},
             {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
         ],
+        tasksToDisplay: 'all',
         inputError: false
     }
 
@@ -88,6 +89,10 @@ class List extends Component {
         });
     }
 
+    tasksToDisplayHandler = (tasksToDisplay) => {
+        this.setState({ tasksToDisplay: tasksToDisplay });
+    }
+
     inputFocusHandler = () => {
         if (this.state.inputError) {
             this.setState({
@@ -107,6 +112,7 @@ class List extends Component {
                 >Delete</Button>
                 <ListItems 
                     tasks={this.state.listItems}
+                    tasksToDisplay={this.state.tasksToDisplay}
                     onTaskCompletion={this.completeTaskHandler}
                     onListItemDeletion={this.deleteListItemHandler}
                     onTaskNameClick={this.toggleButtonsClassHandler} />
@@ -116,7 +122,9 @@ class List extends Component {
                     clicked={this.addListItemHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
-                <ListStatsWidget tasks={this.state.listItems} />
+                <ListStatsWidget 
+                    tasks={this.state.listItems}
+                    sortTasks={this.tasksToDisplayHandler} />
             </div>
         );
     }
