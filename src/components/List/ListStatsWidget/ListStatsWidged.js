@@ -15,7 +15,6 @@ const listStatsWidget = props => {
                 <Button className="ListStatsWidget__Button">Active</Button>
                 <Button className="ListStatsWidget__Button">Completed</Button>
             </div>
-            <Button className="ToggleView__Button"><i class="fas fa-chevron-down"></i></Button>
         </div>
     );
 }
