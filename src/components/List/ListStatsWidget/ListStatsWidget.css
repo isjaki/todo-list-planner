@@ -8,3 +8,22 @@
     margin-top: 7px;
     padding: 4px;
 }
+
+.ListStatsWidget__item {
+    margin: 2px 0;
+}
+
+@media screen and (min-width: 580px) {
+    .ListStatsWidget {
+        display: flex;
+        align-items: center;
+    }
+
+    .ListStatsWidget__item {
+        margin: 2px 10px;
+    }
+
+    .ListStatsWidget__item-sort {
+        margin-left: auto;
+    }
+}
