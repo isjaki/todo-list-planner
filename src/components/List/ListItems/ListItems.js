@@ -4,7 +4,24 @@ import ListItem from './ListItem/ListItem';
 import './ListItems.css';
 
 const listItems = props => {
-    const tasks = props.tasks.map((task, index) => {
+    let filteredTasks = null;
+
+    switch (props.tasksToDisplay) {
+        case 'all':
+            filteredTasks = props.tasks;
+            break;
+        case 'active':
+            filteredTasks = props.tasks.filter(task => !task.completed);
+            break;
+        case 'completed':
+            filteredTasks = props.tasks.filter(task => task.completed);
+            break;
+        default:
+            filteredTasks = props.tasks;
+            break;
+    }
+
+    const tasks = filteredTasks.map((task, index) => {
         return <ListItem 
             key={task.id}
             taskName={task.taskName}

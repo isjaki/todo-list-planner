@@ -35,7 +35,7 @@ button.ListButton {
 
 button.ListButton.Delete {
     position: absolute;
-    top: 10px;
+    top: 115px;
     right: 10px;
     border-radius: 100px;
 }
@@ -105,7 +105,7 @@ button.ListStatsWidget__Button {
     color: #0575e6;
     border: 2px solid #0575e6;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 0 3px;
     padding: 2px 4px;
     font-size: 0.9em;
     font-weight: bold;
@@ -126,6 +126,14 @@ button.ListStatsWidget__Button:hover {
 @media screen and (min-width: 580px) {
     button.AddListButton {
         position: static;
+    }
+
+    button.ListButton.Delete {
+        top: 75px;
+    }
+
+    button.ListStatsWidget__Button {
+        margin: 0 5px;
     }
 }
 

@@ -4,13 +4,9 @@ import Button from '../../UI/Button/Button';
 import './ListStatsWidget.css';
 
 const listStatsWidget = props => {
-    const activeTasksArray = props.tasks.filter(task => {
-        return !task.completed;
-    });
+    const activeTasksArray = props.tasks.filter(task => !task.completed);
 
-    const completedTasksArray = props.tasks.filter(task => {
-        return task.completed;
-    });
+    const completedTasksArray = props.tasks.filter(task => task.completed);
 
     const activeTasks = activeTasksArray.length;
     const completedTasks = completedTasksArray.length;
@@ -25,7 +21,7 @@ const listStatsWidget = props => {
                 <div className="ListStatsWidget__item">Active: {activeTasks}</div>
                 <div className="ListStatsWidget__item">Completed: {completedTasks}</div>
                 <div className="ListStatsWidget__item ListStatsWidget__item-sort">
-                    <span>Sort by:</span>
+                    <span>Filter by:</span>
                     <Button 
                         className="ListStatsWidget__Button"
                         clicked={() => props.sortTasks('all')}

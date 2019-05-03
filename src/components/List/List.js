@@ -90,7 +90,7 @@ class List extends Component {
     }
 
     tasksToDisplayHandler = (tasksToDisplay) => {
-        this.setState({ tasksToDisplay: tasksToDisplay });
+        this.setState({ tasksToDisplay: tasksToDisplay })
     }
 
     inputFocusHandler = () => {
@@ -104,6 +104,9 @@ class List extends Component {
     render() {
         return (
             <div className="List">
+                <ListStatsWidget 
+                    tasks={this.state.listItems}
+                    sortTasks={this.tasksToDisplayHandler} />
                 <div className="List__Date"><i className="far fa-clock"></i>{this.props.date}</div>
                 <div className="List__Title">{this.props.title}</div>
                 <Button 
@@ -122,9 +125,6 @@ class List extends Component {
                     clicked={this.addListItemHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
-                <ListStatsWidget 
-                    tasks={this.state.listItems}
-                    sortTasks={this.tasksToDisplayHandler} />
             </div>
         );
     }
