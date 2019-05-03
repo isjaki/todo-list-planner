@@ -4,6 +4,7 @@ import getKey from '../../helpers/getKey';
 import ListItems from '../List/ListItems/ListItems';
 import AddItem from '../List/AddItem/AddItem';
 import Button from '../UI/Button/Button';
+import ListStatsWidget from './ListStatsWidget/ListStatsWidged';
 import './List.css';
 
 class List extends Component {
@@ -115,6 +116,7 @@ class List extends Component {
                     clicked={this.addListItemHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
+                <ListStatsWidget />
             </div>
         );
     }
