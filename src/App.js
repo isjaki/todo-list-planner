@@ -16,9 +16,7 @@ class App extends Component {
   state = {
     currentListTitle: '',
     pickedDate: null,
-    lists: [
-      { id: '5865', title: 'Test list', date: 'March 21, 2019' }
-    ],
+    lists: [],
     calendarOpened: false
   }
 
