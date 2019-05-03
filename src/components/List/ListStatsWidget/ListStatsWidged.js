@@ -14,20 +14,32 @@ const listStatsWidget = props => {
 
     const activeTasks = activeTasksArray.length;
     const completedTasks = completedTasksArray.length;
+    const allTasks = activeTasks + completedTasks;
+
+    const progressBarDone = Math.round(completedTasks * 100 / allTasks);
+    const progressBarLeft = Math.round(activeTasks * 100 / allTasks);
 
     return (
         <div className="ListStatsWidget">
-            <div className="ListStatsWidget__item">Active: {activeTasks}</div>
-            <div className="ListStatsWidget__item">Completed: {completedTasks}</div>
-            <div className="ListStatsWidget__item ListStatsWidget__item-sort">
-                <span>Sort by:</span>
-                <Button className="ListStatsWidget__Button">All</Button>
-                <Button className="ListStatsWidget__Button">Active</Button>
-                <Button className="ListStatsWidget__Button">Completed</Button>
+            <div className="ListStatsWidget__wrap">
+                <div className="ListStatsWidget__item">Active: {activeTasks}</div>
+                <div className="ListStatsWidget__item">Completed: {completedTasks}</div>
+                <div className="ListStatsWidget__item ListStatsWidget__item-sort">
+                    <span>Sort by:</span>
+                    <Button className="ListStatsWidget__Button">All</Button>
+                    <Button className="ListStatsWidget__Button">Active</Button>
+                    <Button className="ListStatsWidget__Button">Completed</Button>
+                </div>
             </div>
             <div className="ProgressBar">
-                <div className="ProgressBar__Done"></div>
-                <div className="ProgressBar__Left"></div>
+                <div 
+                    className="ProgressBar__done"
+                    style={{ width: progressBarDone + '%' }}
+                ></div>
+                <div 
+                    className="ProgressBar__left"
+                    style={{ width: progressBarLeft + '%' }}
+                ></div>
             </div>
         </div>
     );

@@ -13,8 +13,25 @@
     margin: 2px 0;
 }
 
+.ProgressBar {
+    display: flex;
+    width: 98%;
+    height: 2px;
+    margin: 5px auto;
+}
+
+.ProgressBar__done {
+    background-color: #00f260;
+    transition: all 0.5s;
+}
+
+.ProgressBar__left {
+    background-color: #ce3232;
+    transition: all 0.5s;
+}
+
 @media screen and (min-width: 580px) {
-    .ListStatsWidget {
+    .ListStatsWidget__wrap {
         display: flex;
         align-items: center;
     }
