@@ -116,7 +116,7 @@ class List extends Component {
                     clicked={this.addListItemHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
-                <ListStatsWidget />
+                <ListStatsWidget tasks={this.state.listItems} />
             </div>
         );
     }

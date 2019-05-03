@@ -6,6 +6,7 @@ import './ListStatsWidget.css';
 const listStatsWidget = props => {
     return (
         <div className="ListStatsWidget">
+            <div className="ListStatsWidget__item">All: 0</div>
             <div className="ListStatsWidget__item">Active: 0</div>
             <div className="ListStatsWidget__item">Completed: 0</div>
             <div className="ListStatsWidget__item ListStatsWidget__item-sort">
@@ -14,6 +15,7 @@ const listStatsWidget = props => {
                 <Button className="ListStatsWidget__Button">Active</Button>
                 <Button className="ListStatsWidget__Button">Completed</Button>
             </div>
+            <Button className="ToggleView__Button"><i class="fas fa-chevron-down"></i></Button>
         </div>
     );
 }

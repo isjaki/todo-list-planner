@@ -116,6 +116,15 @@ button.ListStatsWidget__Button:hover {
     color: #ffffff;
 }
 
+button.ToggleView__Button {
+    background: transparent;
+    border: none;
+    font-size: 1.1em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
 @media screen and (min-width: 800px) {
     button.ListButton {
         padding: 8px 16px;
@@ -126,6 +135,10 @@ button.ListStatsWidget__Button:hover {
 @media screen and (min-width: 580px) {
     button.AddListButton {
         position: static;
+    }
+
+    button.ToggleView__Button {
+        display: none;
     }
 }
 

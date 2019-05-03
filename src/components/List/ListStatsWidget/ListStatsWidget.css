@@ -1,4 +1,5 @@
 .ListStatsWidget {
+    position: relative;
     font-size: 0.95em;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.9);
@@ -20,7 +21,7 @@
     }
 
     .ListStatsWidget__item {
-        margin: 2px 10px;
+        margin: 2px 5px;
     }
 
     .ListStatsWidget__item-sort {
