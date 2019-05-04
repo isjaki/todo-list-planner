@@ -111,7 +111,8 @@ button.ListStatsWidget__Button {
     font-weight: bold;
 }
 
-button.ListStatsWidget__Button:hover {
+button.ListStatsWidget__Button:hover,
+button.ListStatsWidget__Button.active {
     background: #0575e6;
     color: #ffffff;
 }

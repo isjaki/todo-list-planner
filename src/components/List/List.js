@@ -107,7 +107,8 @@ class List extends Component {
             <div className="List">
                 <ListStatsWidget 
                     tasks={this.state.listItems}
-                    sortTasks={this.tasksToDisplayHandler} />
+                    filterTasks={this.tasksToDisplayHandler}
+                    tasksToDisplay={this.state.tasksToDisplay} />
                 <div className="List__Date"><i className="far fa-clock"></i>{this.props.date}</div>
                 <div className="List__Title">{this.props.title}</div>
                 <Button 
