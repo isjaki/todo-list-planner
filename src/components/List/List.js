@@ -52,37 +52,38 @@ class List extends Component {
         });
     }
 
-    deleteListItemHandler = (listItemIndex) => {
-        const updatedListItems = [
-            ...this.state.listItems
-        ];
-
-        updatedListItems.splice(listItemIndex, 1);
+    deleteListItemHandler = (taskId) => {
+        const updatedListItems = this.state.listItems
+            .filter(listItem => listItem.id !== taskId)
 
         this.setState({
             listItems: updatedListItems
         });
     }
 
-    completeTaskHandler = (listItemIndex) => {
-        const updatedListItems = [
-            ...this.state.listItems
-        ];
-
-        updatedListItems[listItemIndex].completed = !updatedListItems[listItemIndex].completed;
-        updatedListItems[listItemIndex].buttonsHidden = !updatedListItems[listItemIndex].buttonsHidden;
+    completeTaskHandler = (taskId) => {
+        const updatedListItems = this.state.listItems
+            .map(listItem => {
+                if (listItem.id === taskId) {
+                    listItem.completed = !listItem.completed;
+                    listItem.buttonsHidden = !listItem.buttonsHidden;
+                }
+                return listItem;
+            });
 
         this.setState({
             listItems: updatedListItems,
         });
     }
 
-    toggleButtonsClassHandler = (listItemIndex) => {
-        const updatedListItems = [
-            ...this.state.listItems
-        ];
-
-        updatedListItems[listItemIndex].buttonsHidden = !updatedListItems[listItemIndex].buttonsHidden;
+    toggleButtonsClassHandler = (taskId) => {
+        const updatedListItems = this.state.listItems
+            .map(listItem => {
+                if (listItem.id === taskId) {
+                    listItem.buttonsHidden = !listItem.buttonsHidden;
+                }
+                return listItem;
+            });
 
         this.setState({
             listItems: updatedListItems

@@ -27,9 +27,9 @@ const listItems = props => {
             taskName={task.taskName}
             completed={task.completed}
             buttonsHidden={task.buttonsHidden}
-            onTaskNameClick={props.onTaskNameClick.bind(this, index)}
-            onTaskCompletion={props.onTaskCompletion.bind(this, index)}
-            onListItemDeletion={props.onListItemDeletion.bind(this, index)} />
+            onTaskNameClick={() => props.onTaskNameClick(task.id)}
+            onTaskCompletion={() => props.onTaskCompletion(task.id)}
+            onListItemDeletion={() => props.onListItemDeletion(task.id)} />
     });
 
     return (
