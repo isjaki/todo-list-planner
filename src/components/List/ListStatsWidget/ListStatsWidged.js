@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from '../../UI/Button/Button';
+import ProgressBar from '../../UI/ProgressBar/ProgressBar';
 import './ListStatsWidget.css';
 
 const listStatsWidget = props => {
@@ -36,16 +37,10 @@ const listStatsWidget = props => {
                     >Completed</Button>
                 </div>
             </div>
-            <div className="ProgressBar">
-                <div 
-                    className="ProgressBar__done"
-                    style={{ width: progressBarDone + '%' }}
-                ></div>
-                <div 
-                    className="ProgressBar__left"
-                    style={{ width: progressBarLeft + '%' }}
-                ></div>
-            </div>
+            <ProgressBar 
+                doneWidth={progressBarDone}
+                leftWidth={progressBarLeft}
+            />
         </div>
     );
 }
