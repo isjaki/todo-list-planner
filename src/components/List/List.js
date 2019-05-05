@@ -10,18 +10,7 @@ import './List.css';
 class List extends Component {
     state = {
         currentTask: '',
-<<<<<<< HEAD
         listItems: [],
-=======
-        listItems: [
-            {id: '3432', taskName: 'to do something', completed: true, buttonsHidden: true},
-            {id: '8799', taskName: 'to do something', completed: true, buttonsHidden: true},
-            {id: '43534', taskName: 'to do something', completed: false, buttonsHidden: true},
-            {id: '3424', taskName: 'to do something', completed: false, buttonsHidden: true},
-            {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
-        ],
-        tasksToDisplay: 'all',
->>>>>>> development
         inputError: false
     }
 
