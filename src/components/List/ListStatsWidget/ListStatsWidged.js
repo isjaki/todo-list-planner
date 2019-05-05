@@ -13,8 +13,13 @@ const listStatsWidget = props => {
     const completedTasks = completedTasksArray.length;
     const allTasks = activeTasks + completedTasks;
 
-    const tasksDone = Math.round(completedTasks * 100 / allTasks);
-    const tasksLeft = Math.round(activeTasks * 100 / allTasks);
+    let tasksDone = Math.round(completedTasks * 100 / allTasks);
+    let tasksLeft = Math.round(activeTasks * 100 / allTasks);
+
+    if (isNaN(tasksLeft) && isNaN(tasksDone)) {
+        tasksDone = 0;
+        tasksLeft = 0;
+    }
 
     return (
         <div className="ListStatsWidget">

@@ -3,6 +3,7 @@
     width: 98%;
     height: 2px;
     margin: 5px auto;
+    background-color: #ccc;
 }
 
 .ProgressBar__done {
