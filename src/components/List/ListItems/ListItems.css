@@ -1,4 +1,5 @@
 .ListItems {
+    min-height: 5px;
     padding-left: 10px;
     list-style: none;
 }

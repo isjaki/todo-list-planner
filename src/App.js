@@ -20,6 +20,8 @@ class App extends Component {
     calendarOpened: false
   }
 
+  // set the current date in the DatePicker component
+  // when the app is initially rendered
   componentDidMount() {
     const currentMonth = calendarCreator.getCurrentMonth();
     const currentDay = new Date().getDate();

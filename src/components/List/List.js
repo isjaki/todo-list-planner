@@ -4,12 +4,24 @@ import getKey from '../../helpers/getKey';
 import ListItems from '../List/ListItems/ListItems';
 import AddItem from '../List/AddItem/AddItem';
 import Button from '../UI/Button/Button';
+import ListStatsWidget from './ListStatsWidget/ListStatsWidged';
 import './List.css';
 
 class List extends Component {
     state = {
         currentTask: '',
+<<<<<<< HEAD
         listItems: [],
+=======
+        listItems: [
+            {id: '3432', taskName: 'to do something', completed: true, buttonsHidden: true},
+            {id: '8799', taskName: 'to do something', completed: true, buttonsHidden: true},
+            {id: '43534', taskName: 'to do something', completed: false, buttonsHidden: true},
+            {id: '3424', taskName: 'to do something', completed: false, buttonsHidden: true},
+            {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
+        ],
+        tasksToDisplay: 'all',
+>>>>>>> development
         inputError: false
     }
 
@@ -44,41 +56,51 @@ class List extends Component {
         });
     }
 
-    deleteListItemHandler = (listItemIndex) => {
-        const updatedListItems = [
-            ...this.state.listItems
-        ];
-
-        updatedListItems.splice(listItemIndex, 1);
+    // delete a task
+    deleteListItemHandler = (taskId) => {
+        const updatedListItems = this.state.listItems
+            .filter(listItem => listItem.id !== taskId)
 
         this.setState({
             listItems: updatedListItems
         });
     }
 
-    completeTaskHandler = (listItemIndex) => {
-        const updatedListItems = [
-            ...this.state.listItems
-        ];
-
-        updatedListItems[listItemIndex].completed = !updatedListItems[listItemIndex].completed;
-        updatedListItems[listItemIndex].buttonsHidden = !updatedListItems[listItemIndex].buttonsHidden;
+    // toggle the status of a task (ListItem): active or completed
+    completeTaskHandler = (taskId) => {
+        const updatedListItems = this.state.listItems
+            .map(listItem => {
+                if (listItem.id === taskId) {
+                    listItem.completed = !listItem.completed;
+                    listItem.buttonsHidden = !listItem.buttonsHidden;
+                }
+                return listItem;
+            });
 
         this.setState({
             listItems: updatedListItems,
         });
     }
 
-    toggleButtonsClassHandler = (listItemIndex) => {
-        const updatedListItems = [
-            ...this.state.listItems
-        ];
-
-        updatedListItems[listItemIndex].buttonsHidden = !updatedListItems[listItemIndex].buttonsHidden;
+    // hide or show buttons in the ListItem component
+    toggleButtonsClassHandler = (taskId) => {
+        const updatedListItems = this.state.listItems
+            .map(listItem => {
+                if (listItem.id === taskId) {
+                    listItem.buttonsHidden = !listItem.buttonsHidden;
+                }
+                return listItem;
+            });
 
         this.setState({
             listItems: updatedListItems
         });
+    }
+
+    // set which listItems to render, based on which button 
+    // user clicked in the ListsStatsWidget component
+    tasksToDisplayHandler = (tasksToDisplay) => {
+        this.setState({ tasksToDisplay: tasksToDisplay })
     }
 
     inputFocusHandler = () => {
@@ -92,6 +114,10 @@ class List extends Component {
     render() {
         return (
             <div className="List">
+                <ListStatsWidget 
+                    tasks={this.state.listItems}
+                    filterTasks={this.tasksToDisplayHandler}
+                    tasksToDisplay={this.state.tasksToDisplay} />
                 <div className="List__Date"><i className="far fa-clock"></i>{this.props.date}</div>
                 <div className="List__Title">{this.props.title}</div>
                 <Button 
@@ -100,13 +126,14 @@ class List extends Component {
                 >Delete</Button>
                 <ListItems 
                     tasks={this.state.listItems}
+                    tasksToDisplay={this.state.tasksToDisplay}
                     onTaskCompletion={this.completeTaskHandler}
                     onListItemDeletion={this.deleteListItemHandler}
                     onTaskNameClick={this.toggleButtonsClassHandler} />
                 <AddItem
                     onTaskNameInput={this.inputTaskNameHandler}
                     onInputFocus={this.inputFocusHandler}
-                    clicked={this.addListItemHandler}
+                    onAddListItem={this.addListItemHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
             </div>
