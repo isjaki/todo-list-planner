@@ -19,8 +19,12 @@ const listStatsWidget = props => {
     return (
         <div className="ListStatsWidget">
             <div className="ListStatsWidget__wrap">
-                <div className="ListStatsWidget__item">Active: {activeTasks}</div>
-                <div className="ListStatsWidget__item">Completed: {completedTasks}</div>
+                <div className="ListStatsWidget__item">
+                    Active: {`${activeTasks} (${tasksLeft + '%'})`}
+                </div>
+                <div className="ListStatsWidget__item">
+                    Completed: {`${completedTasks} (${tasksDone + '%'})`}
+                </div>
                 <div className="ListStatsWidget__item ListStatsWidget__item-sort">
                     <span>Filter by:</span>
                     <Button 
