@@ -19,7 +19,8 @@
     color: #8b8b8b;
 }
 
-.Calendar div.current-month.date-disable {
+.Calendar div.current-month.date-disable,
+.Calendar div.previous-month.date-disable {
     font-weight: normal;
     color: #8b8b8b;
     cursor: not-allowed;
@@ -27,7 +28,7 @@
 
 .Calendar div.current-month:not(.date-disable):hover,
 .Calendar div.next-month:hover,
-.Calendar div.previous-month:hover {
+.Calendar div.previous-month:not(.date-disable):hover {
     background-color: #ebebeb;
 }
 

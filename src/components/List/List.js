@@ -52,6 +52,7 @@ class List extends Component {
         });
     }
 
+    // delete a task
     deleteListItemHandler = (taskId) => {
         const updatedListItems = this.state.listItems
             .filter(listItem => listItem.id !== taskId)
@@ -61,6 +62,7 @@ class List extends Component {
         });
     }
 
+    // toggle the status of a task (ListItem): active or completed
     completeTaskHandler = (taskId) => {
         const updatedListItems = this.state.listItems
             .map(listItem => {
@@ -76,6 +78,7 @@ class List extends Component {
         });
     }
 
+    // hide or show buttons in the ListItem component
     toggleButtonsClassHandler = (taskId) => {
         const updatedListItems = this.state.listItems
             .map(listItem => {
@@ -90,6 +93,8 @@ class List extends Component {
         });
     }
 
+    // set which listItems to render, based on which button 
+    // user clicked in the ListsStatsWidget component
     tasksToDisplayHandler = (tasksToDisplay) => {
         this.setState({ tasksToDisplay: tasksToDisplay })
     }
