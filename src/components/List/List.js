@@ -129,7 +129,7 @@ class List extends Component {
                 <AddItem
                     onTaskNameInput={this.inputTaskNameHandler}
                     onInputFocus={this.inputFocusHandler}
-                    clicked={this.addListItemHandler}
+                    onAddListItem={this.addListItemHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
             </div>

@@ -11,6 +11,11 @@ const addItem = props => {
         inputClasses.push('Error');
     }
 
+    const addItemByEnterClick = (event) => {
+        if (event.key !== 'Enter') return;
+        props.onAddListItem();
+    }
+
     return (
         <Aux>
             <input 
@@ -19,10 +24,11 @@ const addItem = props => {
                 placeholder={props.hasError ? 'You must input something!' : "What are you up to?"}
                 value={props.value}
                 onChange={props.onTaskNameInput}
-                onFocus={props.onInputFocus} />
+                onFocus={props.onInputFocus}
+                onKeyUp={addItemByEnterClick} />
             <Button
                 className="ListButton AddItem"
-                clicked={props.clicked}
+                clicked={props.onAddListItem}
             >Add</Button>
         </Aux>
     );
