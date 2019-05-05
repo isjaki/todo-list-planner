@@ -13,8 +13,8 @@ const listStatsWidget = props => {
     const completedTasks = completedTasksArray.length;
     const allTasks = activeTasks + completedTasks;
 
-    const progressBarDone = Math.round(completedTasks * 100 / allTasks);
-    const progressBarLeft = Math.round(activeTasks * 100 / allTasks);
+    const tasksDone = Math.round(completedTasks * 100 / allTasks);
+    const tasksLeft = Math.round(activeTasks * 100 / allTasks);
 
     return (
         <div className="ListStatsWidget">
@@ -44,8 +44,8 @@ const listStatsWidget = props => {
                 </div>
             </div>
             <ProgressBar 
-                doneWidth={progressBarDone}
-                leftWidth={progressBarLeft}
+                doneWidth={tasksDone}
+                leftWidth={tasksLeft}
             />
         </div>
     );

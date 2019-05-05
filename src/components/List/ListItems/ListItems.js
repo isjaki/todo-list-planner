@@ -21,7 +21,7 @@ const listItems = props => {
             break;
     }
 
-    const tasks = filteredTasks.map((task, index) => {
+    const tasks = filteredTasks.map(task => {
         return <ListItem 
             key={task.id}
             taskName={task.taskName}
