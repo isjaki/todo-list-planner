@@ -11,6 +11,7 @@ class List extends Component {
     state = {
         currentTask: '',
         listItems: [],
+        tasksToDisplay: 'all',
         inputError: false
     }
 
