@@ -30,6 +30,9 @@ const addItem = props => {
                 className="ListButton AddItem"
                 clicked={props.onAddListItem}
             >Add</Button>
+            <Button
+                className="ListButton SaveList"
+            >Save</Button>
         </Aux>
     );
 }
