@@ -46,6 +46,7 @@ button.ListButton.Delete:hover {
 }
 
 button.ListButton.AddItem {
+    display: none;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -124,13 +125,19 @@ button.ListStatsWidget__Button.active {
     }
 }
 
+@media screen and (min-width: 650px) {
+    button.ListButton.Delete {
+        top: 75px;
+    }
+}
+
 @media screen and (min-width: 580px) {
     button.AddListButton {
         position: static;
     }
 
-    button.ListButton.Delete {
-        top: 75px;
+    button.ListButton.AddItem {
+        display: inline-block;
     }
 
     button.ListStatsWidget__Button {
