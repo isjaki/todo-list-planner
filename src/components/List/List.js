@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from '../../axios-lists';
 import getKey from '../../helpers/getKey';
 
 import ListItems from '../List/ListItems/ListItems';
@@ -99,6 +100,23 @@ class List extends Component {
         this.setState({ tasksToDisplay: tasksToDisplay })
     }
 
+    saveListHandler = () => {
+        const todoList = {
+            listId: this.props.listId,
+            title: this.props.title,
+            date: this.props.date,
+            listItems: this.state.listItems
+        }
+
+        axios.post('/lists.json', todoList)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
     inputFocusHandler = () => {
         if (this.state.inputError) {
             this.setState({
@@ -130,6 +148,7 @@ class List extends Component {
                     onTaskNameInput={this.inputTaskNameHandler}
                     onInputFocus={this.inputFocusHandler}
                     onAddListItem={this.addListItemHandler}
+                    onListSave={this.saveListHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError} />
             </div>

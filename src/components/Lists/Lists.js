@@ -7,6 +7,7 @@ const lists = React.forwardRef((props, ref) => {
     const todoLists = props.todoLists.map((list, index) => {
         return <List 
             key={list.id}
+            listId={list.id}
             title={list.title}
             date={list.date}
             deleteList={props.onListRemove.bind(this, index)} />

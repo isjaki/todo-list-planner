@@ -32,6 +32,7 @@ const addItem = props => {
             >Add</Button>
             <Button
                 className="ListButton SaveList"
+                clicked={props.onListSave}
             >Save</Button>
         </Aux>
     );
