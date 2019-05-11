@@ -33,6 +33,7 @@ const addItem = props => {
             <Button
                 className="ListButton SaveList"
                 clicked={props.onListSave}
+                disabled={props.isSaveButtonDisabled}
             >Save</Button>
         </Aux>
     );

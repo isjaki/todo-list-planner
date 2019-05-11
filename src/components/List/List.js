@@ -102,6 +102,8 @@ class List extends Component {
     }
 
     saveListHandler = () => {
+        this.setState({ listLoading: true });
+
         const todoList = {
             listId: this.props.listId,
             title: this.props.title,
@@ -115,6 +117,9 @@ class List extends Component {
             })
             .catch(error => {
                 console.log(error);
+            })
+            .finally(() => {
+                this.setState({ listLoading: false });
             });
     }
 
@@ -151,7 +156,8 @@ class List extends Component {
                     onAddListItem={this.addListItemHandler}
                     onListSave={this.saveListHandler}
                     value={this.state.currentTask}
-                    hasError={this.state.inputError} />
+                    hasError={this.state.inputError}
+                    isSaveButtonDisabled={this.state.listLoading} />
             </div>
         );
     }
