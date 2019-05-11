@@ -5,7 +5,7 @@ import Button from '../UI/Button/Button';
 import DatePicker from '../DatePicker/DatePicker';
 
 const addList = props => (
-    <div className="AddList">
+    <div className="AddList" onClickCapture={props.closeCalendarHandler}>
         <h1>TODO LIST PLANNER</h1>
         <div className="AddList__Create">
             <h2>Create a TODO list:</h2>

@@ -40,6 +40,12 @@ class App extends Component {
     this.setState({ calendarOpened: true });
   }
 
+  closeCalendarHandler = () => {
+    if (!this.state.calendarOpened) return;
+
+    this.setState({ calendarOpened: false });
+  }
+
   pickDateHandler = (event) => {
     event.stopPropagation();
 
@@ -97,6 +103,7 @@ class App extends Component {
             pickedDate={this.state.pickedDate}
             calendarOpened={this.state.calendarOpened}
             openCalendarHandler={this.openCalendarHandler}
+            closeCalendarHandler={this.closeCalendarHandler}
             pickDateHandler={this.pickDateHandler} />
           <Lists
             ref={this.listsRef} 
