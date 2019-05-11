@@ -97,8 +97,8 @@ class List extends Component {
 
     // set which listItems to render, based on which button 
     // user clicked in the ListsStatsWidget component
-    tasksToDisplayHandler = (tasksToDisplay) => {
-        this.setState({ tasksToDisplay: tasksToDisplay })
+    tasksToDisplayHandler = (filterButtonChosen) => {
+        this.setState({ tasksToDisplay: filterButtonChosen })
     }
 
     saveListHandler = () => {
@@ -157,7 +157,7 @@ class List extends Component {
                     onListSave={this.saveListHandler}
                     value={this.state.currentTask}
                     hasError={this.state.inputError}
-                    isSaveButtonDisabled={this.state.listLoading} />
+                    isLoadingInProcess={this.state.listLoading} />
             </div>
         );
     }
