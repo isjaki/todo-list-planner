@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from '../../axios-lists';
 import getKey from '../../helpers/getKey';
 
 import ListItems from '../List/ListItems/ListItems';
@@ -19,22 +18,15 @@ class List extends Component {
             {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
         ],
         tasksToDisplay: 'all',
-        inputError: false,
-        listLoading: false
     }
 
-    inputTaskNameHandler = (event) => {
+    inputChangeHandler = (event) => {
         this.setState({
             currentTask: event.target.value
         });
     }
 
     addListItemHandler = () => {
-        if (!this.state.currentTask) {
-            this.setState({ inputError: true });
-            return;
-        }
-
         const newListItem = {
             id: getKey(this.state.currentTask),
             taskName: this.state.currentTask,
@@ -101,36 +93,6 @@ class List extends Component {
         this.setState({ tasksToDisplay: filterButtonChosen })
     }
 
-    saveListHandler = () => {
-        this.setState({ listLoading: true });
-
-        const todoList = {
-            listId: this.props.listId,
-            title: this.props.title,
-            date: this.props.date,
-            listItems: this.state.listItems
-        }
-
-        axios.post('/lists.json', todoList)
-            .then(response => {
-                console.log(response);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-            .finally(() => {
-                this.setState({ listLoading: false });
-            });
-    }
-
-    inputFocusHandler = () => {
-        if (this.state.inputError) {
-            this.setState({
-                inputError: false
-            });
-        }
-    }
-
     render() {
         return (
             <div className="List">
@@ -138,8 +100,12 @@ class List extends Component {
                     tasks={this.state.listItems}
                     filterTasks={this.tasksToDisplayHandler}
                     tasksToDisplay={this.state.tasksToDisplay} />
-                <div className="List__Date"><i className="far fa-clock"></i>{this.props.date}</div>
-                <div className="List__Title">{this.props.title}</div>
+                <div className="List__Date">
+                    <i className="far fa-clock"></i>{this.props.listData.date}
+                </div>
+                <div className="List__Title">
+                    {this.props.listData.title}
+                </div>
                 <Button 
                     clicked={this.props.deleteList}
                     className="ListButton Delete"
@@ -151,13 +117,11 @@ class List extends Component {
                     onListItemDeletion={this.deleteListItemHandler}
                     onTaskNameClick={this.toggleButtonsClassHandler} />
                 <AddItem
-                    onTaskNameInput={this.inputTaskNameHandler}
-                    onInputFocus={this.inputFocusHandler}
+                    onInputChange={this.inputChangeHandler}
                     onAddListItem={this.addListItemHandler}
-                    onListSave={this.saveListHandler}
                     value={this.state.currentTask}
-                    hasError={this.state.inputError}
-                    isLoadingInProcess={this.state.listLoading} />
+                    listData={this.props.listData}
+                    listItems={this.state.listItems} />
             </div>
         );
     }
