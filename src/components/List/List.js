@@ -19,7 +19,8 @@ class List extends Component {
             {id: '13143', taskName: 'to do something', completed: false, buttonsHidden: true}
         ],
         tasksToDisplay: 'all',
-        inputError: false
+        inputError: false,
+        listLoading: false
     }
 
     inputTaskNameHandler = (event) => {

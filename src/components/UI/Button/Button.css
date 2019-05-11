@@ -134,6 +134,10 @@ button.ListStatsWidget__Button.active {
         padding: 8px 16px;
         font-size: 1em;
     }
+
+    button.ListButton.SaveList {
+        padding: 8px 22px;
+    }
 }
 
 @media screen and (min-width: 650px) {
@@ -150,6 +154,8 @@ button.ListStatsWidget__Button.active {
     button.ListButton.AddItem {
         display: inline-block;
     }
+
+    
 
     button.ListStatsWidget__Button {
         margin: 0 5px;
