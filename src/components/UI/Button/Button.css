@@ -57,6 +57,7 @@ button.ListButton.AddItem:hover {
 }
 
 button.ListButton.SaveList {
+    /* width: 60px; */
     position: absolute;
     right: 10px;
     border-radius: 5px;
@@ -142,6 +143,7 @@ button.ListStatsWidget__Button.active {
 
     button.ListButton.SaveList {
         padding: 8px 22px;
+        width: 82px;
     }
 }
 
@@ -159,8 +161,6 @@ button.ListStatsWidget__Button.active {
     button.ListButton.AddItem {
         display: inline-block;
     }
-
-    
 
     button.ListStatsWidget__Button {
         margin: 0 5px;

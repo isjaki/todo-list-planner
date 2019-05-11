@@ -2,6 +2,7 @@ import React from 'react';
 
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Button from '../../UI/Button/Button';
+import Spinner from '../../UI/Spinner/Spinner';
 import './AddItem.css';
 
 const addItem = props => {
@@ -9,6 +10,14 @@ const addItem = props => {
 
     if (props.hasError) {
         inputClasses.push('Error');
+    }
+
+    let saveListChildren = 'Save';
+
+    if (props.isLoadingInProcess) {
+        saveListChildren = (
+            <Spinner type="bounce" />
+        );
     }
 
     const addItemByEnterClick = (event) => {
@@ -34,7 +43,7 @@ const addItem = props => {
                 className="ListButton SaveList"
                 clicked={props.onListSave}
                 disabled={props.isLoadingInProcess}
-            >Save</Button>
+            >{saveListChildren}</Button>
         </Aux>
     );
 }
