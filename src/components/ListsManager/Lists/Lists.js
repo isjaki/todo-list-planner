@@ -1,6 +1,6 @@
 import React from 'react';
 
-import List from '../List/List';
+import List from '../../List/List';
 import './Lists.css';
 
 const lists = React.forwardRef((props, ref) => {

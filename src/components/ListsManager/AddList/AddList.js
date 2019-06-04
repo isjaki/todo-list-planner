@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './AddList.css';
-import Button from '../UI/Button/Button';
-import DatePicker from '../DatePicker/DatePicker';
+import Button from '../../UI/Button/Button';
+import DatePicker from '../../DatePicker/DatePicker';
 
 const addList = props => (
     <div className="AddList" onClickCapture={props.closeCalendarHandler}>
