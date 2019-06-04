@@ -95,6 +95,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <div>Toolbar</div>
           <AddList
             onTitleChange={this.titleChangeHandler}
             addNewList={this.addNewListHandler}
