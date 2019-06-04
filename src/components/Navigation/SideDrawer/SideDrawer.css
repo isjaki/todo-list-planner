@@ -1,0 +1,15 @@
+.SideDrawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 900;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 490px) {
+    .SideDrawer {
+        width: 295px;
+    }
+}

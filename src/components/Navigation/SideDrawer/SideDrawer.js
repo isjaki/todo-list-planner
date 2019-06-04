@@ -5,7 +5,7 @@ import './SideDrawer.css';
 
 const sideDrawer = props => {
     return (
-        <nav>
+        <nav className="SideDrawer">
             <NavigationItems />
         </nav>
     );

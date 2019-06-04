@@ -4,7 +4,7 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import './NavigationItems.css';
 
 const navigationItems = props => (
-    <ul>
+    <ul className="NavigationItems">
         <NavigationItem>Create List</NavigationItem>
         <NavigationItem>My Lists</NavigationItem>
     </ul>
