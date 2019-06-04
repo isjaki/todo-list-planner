@@ -2,3 +2,8 @@
     font-size: 1.3em;
     margin: 20px auto;
 }
+
+.NavigationItem a {
+    color: #000;
+    text-decoration: none;
+}
