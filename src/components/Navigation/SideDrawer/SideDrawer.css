@@ -8,8 +8,8 @@
     background-color: #fff;
 }
 
-@media screen and (min-width: 490px) {
+@media screen and (min-width: 390px) {
     .SideDrawer {
-        width: 295px;
+        width: 235px;
     }
 }
