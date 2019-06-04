@@ -6,6 +6,7 @@ import './App.css';
 
 import AddList from './components/AddList/AddList';
 import Lists from './components/Lists/Lists';
+import Layout from './hoc/Layout/Layout';
 
 class App extends Component {
   constructor(props) {
@@ -95,7 +96,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <div>Toolbar</div>
           <AddList
             onTitleChange={this.titleChangeHandler}
             addNewList={this.addNewListHandler}
