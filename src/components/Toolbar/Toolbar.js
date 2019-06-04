@@ -7,7 +7,10 @@ class Toolbar extends Component {
     render() {
         return (
             <header className="Toolbar">
-                <HamburgerButton />
+                <HamburgerButton 
+                    onClick={this.props.toggleSideDrawer}
+                    sideDrawerOpened={this.props.sideDrawerOpened}
+                />
             </header>
         );
     }

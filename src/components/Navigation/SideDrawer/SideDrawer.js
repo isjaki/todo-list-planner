@@ -4,8 +4,14 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import './SideDrawer.css';
 
 const sideDrawer = props => {
+    const classes = ['SideDrawer'];
+
+    if (props.opened) {
+        classes.push('opened');
+    }
+
     return (
-        <nav className="SideDrawer">
+        <nav className={classes.join(' ')}>
             <NavigationItems />
         </nav>
     );
