@@ -22,7 +22,10 @@ class Layout extends Component {
                     toggleSideDrawer={this.toggleSideDrawerHandler}
                     sideDrawerOpened={this.state.sideDrawerOpened}
                 />
-                <SideDrawer opened={this.state.sideDrawerOpened} />
+                <SideDrawer 
+                    opened={this.state.sideDrawerOpened}
+                    closeSideDrawer={this.toggleSideDrawerHandler}
+                />
                 <main>
                     {this.props.children}
                 </main>
