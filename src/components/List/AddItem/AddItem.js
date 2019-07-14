@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Button from '../../UI/Button/Button';
 import './AddItem.css';
 
@@ -12,7 +11,7 @@ const addItem = props => {
     }
 
     return (
-        <Aux>
+        <Fragment>
             <input 
                 type="text"
                 className={inputClasses.join(' ')}
@@ -24,7 +23,7 @@ const addItem = props => {
                 className="ListButton AddItem"
                 clicked={props.onAddListItem}
             >Add</Button>
-        </Aux>
+        </Fragment>
     );
 }
 

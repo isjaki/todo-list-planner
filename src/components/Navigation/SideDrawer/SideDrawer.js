@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import './SideDrawer.css';
 
 const sideDrawer = props => {
@@ -13,7 +12,7 @@ const sideDrawer = props => {
     }
 
     return (
-        <Aux>
+        <Fragment>
             <Backdrop 
                 show={props.opened} 
                 clicked={props.closeSideDrawer}
@@ -21,7 +20,7 @@ const sideDrawer = props => {
             <nav className={classes.join(' ')}>
                 <NavigationItems />
             </nav>
-        </Aux>
+        </Fragment>
     );
 }
 

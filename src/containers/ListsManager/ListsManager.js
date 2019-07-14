@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import getKey from '../../helpers/getKey';
 import activateSmoothScroll from '../../helpers/activateSmoothScroll';
 import calendarCreator from '../../helpers/calendar';
 
 import Lists from '../../components/ListsManager/Lists/Lists';
 import AddList from '../../components/ListsManager/AddList/AddList';
-import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 class ListsManager extends Component {
     constructor(props) {
@@ -94,7 +93,7 @@ class ListsManager extends Component {
 
     render() {
         return (
-            <Aux>
+            <Fragment>
                 <AddList
                     onTitleChange={this.titleChangeHandler}
                     addNewList={this.addNewListHandler}
@@ -109,7 +108,7 @@ class ListsManager extends Component {
                     ref={this.listsRef} 
                     todoLists={this.state.lists}
                     onListRemove={this.deleteListHandler} />
-            </Aux>
+            </Fragment>
         );
     }
 }
