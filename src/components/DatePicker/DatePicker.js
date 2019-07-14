@@ -3,14 +3,17 @@ import React from 'react';
 import Calendar from './Calendar/Calendar';
 import './DatePicker.css';
 
-const datePicker = props => {
+const datePicker = ({
+    openCalendarHandler, 
+    pickDateHandler,
+    calendarOpened,
+    pickedDate
+}) => {
     return (
-        <div className="DatePicker" onClick={props.openCalendarHandler}>
-            {
-                props.calendarOpened ? 
-                <Calendar dateClicked={props.pickDateHandler} /> : 
-                <div className="DatePicker__CurrentDate">{props.pickedDate}</div>
-            }
+        <div className="DatePicker" onClick={openCalendarHandler}>
+            {calendarOpened ? 
+            <Calendar dateClicked={pickDateHandler} /> : 
+            <div className="DatePicker__CurrentDate">{pickedDate}</div>}
         </div>
     );
 }
