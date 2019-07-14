@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import getKey from '../../helpers/getKey';
 import axios from '../../axios-lists';
 
+import ListInfo from './ListInfo/ListInfo';
 import ListItems from '../List/ListItems/ListItems';
 import AddItem from '../List/AddItem/AddItem';
 import Button from '../UI/Button/Button';
@@ -140,12 +141,9 @@ class List extends Component {
                     tasks={this.state.listItems}
                     filterTasks={this.tasksToDisplayHandler}
                     tasksToDisplay={this.state.tasksToDisplay} />
-                <div className="List__Date">
-                    <i className="far fa-clock"></i>{this.props.listData.date}
-                </div>
-                <div className="List__Title">
-                    {this.props.listData.title}
-                </div>
+                <ListInfo 
+                    date={this.props.listData.date}
+                    title={this.props.listData.title} />
                 <Button 
                     clicked={this.props.deleteList}
                     className="ListButton Delete"
