@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Toolbar from '../../components/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
-import Aux from '../Auxiliary/Auxiliary';
+import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 class Layout extends Component {
     state = {

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import getKey from '../../helpers/getKey';
 import axios from '../../axios-lists';
 
-import ListInfo from './ListInfo/ListInfo';
-import ListItems from '../List/ListItems/ListItems';
-import AddItem from '../List/AddItem/AddItem';
-import Button from '../UI/Button/Button';
-import SaveButton from '../UI/Button/SaveButton/SaveButton';
-import ListStatsWidget from './ListStatsWidget/ListStatsWidged';
+import ListInfo from '../../components/List/ListInfo/ListInfo';
+import ListItems from '../../components/List/ListItems/ListItems';
+import AddItem from '../../components/List/AddItem/AddItem';
+import Button from '../../components/UI/Button/Button';
+import SaveButton from '../../components/UI/Button/SaveButton/SaveButton';
+import ListStatsWidget from '../../components/List/ListStatsWidget/ListStatsWidged';
 import './List.css';
 
 class List extends Component {

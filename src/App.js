@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import './App.css';
-
-import ListsManager from './components/ListsManager/ListsManager';
-import MyLists from './components/MyLists/MyLists';
-import Layout from './hoc/Layout/Layout';
+import ListsManager from './containers/ListsManager/ListsManager';
+import MyLists from './containers/MyLists/MyLists';
+import Layout from './containers/Layout/Layout';
 
 class App extends Component {
   render() {

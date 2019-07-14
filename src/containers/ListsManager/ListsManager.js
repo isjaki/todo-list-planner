@@ -3,8 +3,8 @@ import getKey from '../../helpers/getKey';
 import activateSmoothScroll from '../../helpers/activateSmoothScroll';
 import calendarCreator from '../../helpers/calendar';
 
-import Lists from './Lists/Lists';
-import AddList from './AddList/AddList';
+import Lists from '../../components/ListsManager/Lists/Lists';
+import AddList from '../../components/ListsManager/AddList/AddList';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 class ListsManager extends Component {
