@@ -3,38 +3,42 @@ import React from 'react';
 import ListItem from './ListItem/ListItem';
 import './ListItems.css';
 
-const listItems = props => {
+const listItems = ({
+    tasks,
+    tasksToDisplay,
+    onTaskClick,
+    onTaskCompletion,
+    onTaskDeletion
+}) => {
     let filteredTasks = null;
 
-    switch (props.tasksToDisplay) {
+    switch (tasksToDisplay) {
         case 'all':
-            filteredTasks = props.tasks;
+            filteredTasks = tasks;
             break;
         case 'active':
-            filteredTasks = props.tasks.filter(task => !task.completed);
+            filteredTasks = tasks.filter(task => !task.completed);
             break;
         case 'completed':
-            filteredTasks = props.tasks.filter(task => task.completed);
+            filteredTasks = tasks.filter(task => task.completed);
             break;
         default:
-            filteredTasks = props.tasks;
+            filteredTasks = tasks;
             break;
     }
 
-    const tasks = filteredTasks.map(task => {
-        return <ListItem 
-            key={task.id}
-            taskName={task.taskName}
-            completed={task.completed}
-            buttonsHidden={task.buttonsHidden}
-            onTaskNameClick={() => props.onTaskNameClick(task.id)}
-            onTaskCompletion={() => props.onTaskCompletion(task.id)}
-            onListItemDeletion={() => props.onListItemDeletion(task.id)} />
-    });
-
     return (
         <ul className="ListItems">
-           {tasks}
+           {filteredTasks.map(task => {
+                return <ListItem 
+                    key={task.id}
+                    taskName={task.taskName}
+                    completed={task.completed}
+                    buttonsHidden={task.buttonsHidden}
+                    onTaskClick={() => onTaskClick(task.id)}
+                    onTaskCompletion={() => onTaskCompletion(task.id)}
+                    onListItemDeletion={() => onTaskDeletion(task.id)} />
+            })}
         </ul>
     );
 }

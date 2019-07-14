@@ -3,7 +3,14 @@ import React from 'react';
 import Button from '../../../UI/Button/Button';
 import './ListItem.css';
 
-const listItem = props => {
+const listItem = ({
+    buttonsHidden,
+    completed,
+    taskName,
+    onTaskClick,
+    onTaskCompletion,
+    onTaskDeletion
+}) => {
 
     const mouseDownHandler = event => {
         event.preventDefault();
@@ -12,28 +19,28 @@ const listItem = props => {
     const completedButtonClasses = ['ListItemButton', 'Completed'];
     const deleteButtonClasses = ['ListItemButton', 'Delete'];
 
-    if (props.buttonsHidden) {
+    if (buttonsHidden) {
         completedButtonClasses.push('Hidden');
         deleteButtonClasses.push('Hidden');
     }
 
     return (
         <li className="ListItem">
-            {props.completed ? <i className="fas fa-check-square"></i> : <i className="fas fa-clock"></i>}
+            {completed ? <i className="fas fa-check-square"></i> : <i className="fas fa-clock"></i>}
             <span
                 className="ListItem__TaskName"
-                onClick={props.onTaskNameClick}
+                onClick={onTaskClick}
                 onMouseDown={mouseDownHandler}
-            >{props.taskName}</span>
+            >{taskName}</span>
             <Button
                 className={completedButtonClasses.join(' ')}
-                clicked={props.onTaskCompletion}
+                clicked={onTaskCompletion}
             >
-                {props.completed ? <i className="fas fa-redo-alt"></i> : <i className="fas fa-check"></i>}
+                {completed ? <i className="fas fa-redo-alt"></i> : <i className="fas fa-check"></i>}
             </Button>
             <Button
                 className={deleteButtonClasses.join(' ')}
-                clicked={props.onListItemDeletion}
+                clicked={onTaskDeletion}
             >
                 <i className="fas fa-times"></i>
             </Button>

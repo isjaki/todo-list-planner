@@ -5,9 +5,13 @@ import Button from '../../UI/Button/Button';
 import ProgressBar from '../../UI/ProgressBar/ProgressBar';
 import './ListStatsWidget.css';
 
-const listStatsWidget = props => {
-    const activeTasksArray = props.tasks.filter(task => !task.completed);
-    const completedTasksArray = props.tasks.filter(task => task.completed);
+const listStatsWidget = ({
+    tasks,
+    tasksToDisplay,
+    filterTasks
+}) => {
+    const activeTasksArray = tasks.filter(task => !task.completed);
+    const completedTasksArray = tasks.filter(task => task.completed);
 
     const activeTasks = activeTasksArray.length;
     const completedTasks = completedTasksArray.length;
@@ -34,21 +38,21 @@ const listStatsWidget = props => {
                     <span>Filter by:</span>
                     <Button 
                         className={classNames(
-                            'ListStatsWidget__Button', {active: props.tasksToDisplay === 'all'}
+                            'ListStatsWidget__Button', {active: tasksToDisplay === 'all'}
                             )}
-                        clicked={() => props.filterTasks('all')}
+                        clicked={() => filterTasks('all')}
                     >All</Button>
                     <Button 
                         className={classNames(
-                            'ListStatsWidget__Button', {active: props.tasksToDisplay === 'active'}
+                            'ListStatsWidget__Button', {active: tasksToDisplay === 'active'}
                             )}
-                        clicked={() => props.filterTasks('active')}
+                        clicked={() => filterTasks('active')}
                     >Active</Button>
                     <Button 
                         className={classNames(
-                            'ListStatsWidget__Button', {active: props.tasksToDisplay === 'completed'}
+                            'ListStatsWidget__Button', {active: tasksToDisplay === 'completed'}
                             )}
-                        clicked={() => props.filterTasks('completed')}
+                        clicked={() => filterTasks('completed')}
                     >Completed</Button>
                 </div>
             </div>

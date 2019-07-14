@@ -66,7 +66,7 @@ class List extends Component {
     }
 
     // delete a task
-    deleteListItemHandler = (taskId) => {
+    deleteTaskHandler = (taskId) => {
         const updatedListItems = this.state.listItems
             .filter(listItem => listItem.id !== taskId)
 
@@ -152,8 +152,8 @@ class List extends Component {
                     tasks={this.state.listItems}
                     tasksToDisplay={this.state.tasksToDisplay}
                     onTaskCompletion={this.completeTaskHandler}
-                    onListItemDeletion={this.deleteListItemHandler}
-                    onTaskNameClick={this.toggleButtonsClassHandler} />
+                    onTaskDeletion={this.deleteTaskHandler}
+                    onTaskClick={this.toggleButtonsClassHandler} />
                 <AddItem
                     onInputChange={this.inputChangeHandler}
                     onAddListItem={this.addListItemHandler}
