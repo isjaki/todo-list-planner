@@ -98,7 +98,6 @@ class ListsManager extends Component {
                     onTitleChange={this.titleChangeHandler}
                     addNewList={this.addNewListHandler}
                     title={this.state.currentListTitle}
-                    date={this.state.currentListDate}
                     pickedDate={this.state.pickedDate}
                     calendarOpened={this.state.calendarOpened}
                     openCalendarHandler={this.openCalendarHandler}

@@ -4,8 +4,17 @@ import './AddList.css';
 import Button from '../../UI/Button/Button';
 import DatePicker from '../../DatePicker/DatePicker';
 
-const addList = props => (
-    <div className="AddList" onClickCapture={props.closeCalendarHandler}>
+const addList = ({
+    title,
+    pickedDate,
+    calendarOpened,
+    openCalendarHandler,
+    closeCalendarHandler,
+    pickDateHandler,
+    onTitleChange,
+    addNewList
+}) => (
+    <div className="AddList" onClickCapture={closeCalendarHandler}>
         <h1>TODO LIST PLANNER</h1>
         <div className="AddList__Create">
             <h2>Create a TODO list:</h2>
@@ -15,19 +24,19 @@ const addList = props => (
                     id="title"
                     name="title"
                     type="text"
-                    value={props.title}
-                    onChange={props.onTitleChange} />
+                    value={title}
+                    onChange={onTitleChange} />
             </p>
             <div className="DatePicker__Container">
                 <label>Set a date:</label>
                 <DatePicker
-                    pickedDate={props.pickedDate}
-                    calendarOpened={props.calendarOpened}
-                    openCalendarHandler={props.openCalendarHandler}
-                    pickDateHandler={props.pickDateHandler} />
+                    pickedDate={pickedDate}
+                    calendarOpened={calendarOpened}
+                    openCalendarHandler={openCalendarHandler}
+                    pickDateHandler={pickDateHandler} />
             </div>
             <Button
-                clicked={props.addNewList}
+                clicked={addNewList}
                 className="AddListButton"
             >Create</Button>
         </div>
