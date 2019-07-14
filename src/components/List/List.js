@@ -5,8 +5,8 @@ import axios from '../../axios-lists';
 import ListItems from '../List/ListItems/ListItems';
 import AddItem from '../List/AddItem/AddItem';
 import Button from '../UI/Button/Button';
+import SaveButton from '../UI/Button/SaveButton/SaveButton';
 import ListStatsWidget from './ListStatsWidget/ListStatsWidged';
-import Spinner from '..//UI/Spinner/Spinner';
 import './List.css';
 
 class List extends Component {
@@ -134,14 +134,6 @@ class List extends Component {
     }
 
     render() {
-        let saveListChildren = 'Save';
-
-        if (this.state.listIsSaving) {
-            saveListChildren = (
-                <Spinner type="bounce" />
-            );
-        }
-
         return (
             <div className="List">
                 <ListStatsWidget 
@@ -169,11 +161,9 @@ class List extends Component {
                     onAddListItem={this.addListItemHandler}
                     value={this.state.currentTask}
                     inputError={this.state.inputError} />
-                <Button
-                    className="ListButton SaveList"
-                    clicked={this.saveListHandler}
-                    disabled={this.state.listLoading}
-                >{saveListChildren}</Button>
+                <SaveButton 
+                    onSave={this.saveListHandler}
+                    isSaving={this.state.listIsSaving} />
             </div>
         );
     }
