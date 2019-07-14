@@ -1,8 +1,8 @@
 import React from 'react';
 
-const calendarTable = props => {
+const calendarTable = ({ monthData, clicked }) => {
 
-    return props.monthData.map((date, index) => {
+    return monthData.map(date => {
         const fullDate = `${date.month}-${date.day},-${date.year}`;
         const classes = [fullDate, date.monthClass];
 
@@ -13,7 +13,7 @@ const calendarTable = props => {
         return <div
             key={fullDate}
             className={classes.join(' ')}
-            onClick={classes[2] ? null : props.clicked}>{date.day}</div>;
+            onClick={classes[2] ? null : clicked}>{date.day}</div>;
     });
 }
 
