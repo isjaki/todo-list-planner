@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import Toolbar from '../../components/Toolbar/Toolbar';
+import Toolbar from '../Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import HamburgerButton from '../UI/Button/HamburgerButton/HamburgerButton';
+import HamburgerButton from '../../components/UI/Button/HamburgerButton/HamburgerButton';
 import './Toolbar.css';
 
 class Toolbar extends Component {
