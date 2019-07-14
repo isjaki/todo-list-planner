@@ -3,10 +3,15 @@ import React, { Fragment } from 'react';
 import Button from '../../UI/Button/Button';
 import './AddItem.css';
 
-const addItem = props => {
+const addItem = ({
+    inputError,
+    value,
+    onInputChange,
+    onAddListItem
+}) => {
     const inputClasses = ['AddItemInput'];
 
-    if (props.inputError) {
+    if (inputError) {
         inputClasses.push('Error');
     }
 
@@ -15,13 +20,13 @@ const addItem = props => {
             <input 
                 type="text"
                 className={inputClasses.join(' ')}
-                placeholder={props.inputError ? 'You must input something!' : "What are you up to?"}
-                value={props.value}
-                onChange={props.onInputChange}
-                onKeyUp={props.onAddListItem} />
+                placeholder={inputError ? 'You must input something!' : "What are you up to?"}
+                value={value}
+                onChange={onInputChange}
+                onKeyUp={onAddListItem} />
             <Button
                 className="ListButton AddItem"
-                clicked={props.onAddListItem}
+                clicked={onAddListItem}
             >Add</Button>
         </Fragment>
     );
