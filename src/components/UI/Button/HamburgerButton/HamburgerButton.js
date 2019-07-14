@@ -2,17 +2,17 @@ import React from 'react';
 
 import './HamburgerButton.css';
 
-const hamburgerButton = props => {
+const hamburgerButton = ({ sideDrawerOpened, onClick }) => {
     const classes = ['HamburgerButton'];
 
-    if (props.sideDrawerOpened) {
+    if (sideDrawerOpened) {
         classes.push('SideDrawer__Opened');
     }
 
     return (
         <div 
             className={classes.join(' ')}
-            onClick={props.onClick}
+            onClick={onClick}
         >
             <div></div>
             <div></div>

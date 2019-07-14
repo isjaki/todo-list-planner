@@ -2,15 +2,15 @@ import React from 'react';
 
 import './ProgressBar.css';
 
-const progressBar = props => (
+const progressBar = ({ doneWidth, leftWidth }) => (
     <div className="ProgressBar">
         <div 
             className="ProgressBar__done"
-            style={{ width: props.doneWidth + '%' }}
+            style={{ width: doneWidth + '%' }}
         ></div>
         <div 
             className="ProgressBar__left"
-            style={{ width: props.leftWidth + '%' }}
+            style={{ width: leftWidth + '%' }}
         ></div>
     </div>
 );

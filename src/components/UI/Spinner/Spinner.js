@@ -2,10 +2,10 @@ import React from 'react';
 
 import './Spinner.css';
 
-const spinner = props => {
+const spinner = ({ type }) => {
     let spinner = null;
 
-    switch (props.type) {
+    switch (type) {
         case 'bounce':
             spinner = (
                 <div className="spinner">
