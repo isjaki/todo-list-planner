@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import './NavigationItem.css';
 
-const navigationItem = props => (
+const navigationItem = ({ link, children }) => (
     <li className="NavigationItem">
-        <Link to={props.link}>{props.children}</Link>
+        <Link to={link}>{children}</Link>
     </li>
 );
 

@@ -4,18 +4,18 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import './SideDrawer.css';
 
-const sideDrawer = props => {
+const sideDrawer = ({ opened, closeSideDrawer }) => {
     const classes = ['SideDrawer'];
 
-    if (props.opened) {
+    if (opened) {
         classes.push('opened');
     }
 
     return (
         <Fragment>
             <Backdrop 
-                show={props.opened} 
-                clicked={props.closeSideDrawer}
+                show={opened} 
+                clicked={closeSideDrawer}
             />
             <nav className={classes.join(' ')}>
                 <NavigationItems />
