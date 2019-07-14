@@ -2,13 +2,13 @@ import React, { Fragment } from'react';
 
 import './ListInfo.css';
 
-const listInfo = props => (
+const listInfo = ({ date, title }) => (
     <Fragment>
         <div className="List__Date">
-            <i className="far fa-clock"></i>{props.date}
+            <i className="far fa-clock"></i>{date}
         </div>
         <div className="List__Title">
-            {props.title}
+            {title}
         </div>
     </Fragment>
 );
